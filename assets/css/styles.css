@@ -1,0 +1,69 @@
+﻿body { 
+            font-family: 'Inter', sans-serif; 
+        }
+        
+        /* Плавная прокрутка для якорных ссылок и отступ под фиксированный хэдер */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+        
+        /* Жесткая фиксация цвета кнопки для Tilda (защита от багов iOS/Safari) */
+        .btn-accent {
+            background-color: #E8501A !important;
+            color: #FFFFFF !important; 
+            border-radius: 30px !important;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            -webkit-appearance: none;
+        }
+        
+        .btn-accent:hover {
+            background-color: #c94214 !important;
+            box-shadow: 0 10px 25px -5px rgba(232, 80, 26, 0.4);
+        }
+        
+        .btn-accent:active {
+            transform: scale(0.98);
+        }
+
+        .btn-dark {
+            background-color: #111827 !important;
+            color: #FFFFFF !important; 
+            border-radius: 30px !important;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            -webkit-appearance: none;
+        }
+        
+        .btn-dark:hover {
+            background-color: #374151 !important;
+        }
+        
+        .btn-dark:active {
+            transform: scale(0.98);
+        }
+        
+        .btn-secondary {
+            background-color: #E5E7EB !important;
+            color: #111827 !important; 
+            border-radius: 30px !important;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            -webkit-appearance: none;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #D1D5DB !important;
+        }
+        
+        .btn-secondary:active {
+            transform: scale(0.98);
+        }
+
+        /* Скрытие системного скроллбара для каруселей */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
