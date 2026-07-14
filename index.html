@@ -10,7 +10,7 @@
 <body>
     <header class="site-header">
         <a class="brand" href="#top" aria-label="На главный экран">
-            <span class="brand-mark">FB</span>
+            <span class="brand-mark">FFB</span>
             <span>
                 <strong>Ирина Бирюкова</strong>
                 <small>финансовый директор</small>
@@ -234,6 +234,35 @@
             </div>
         </section>
 
+        <section class="workflow section-shell">
+            <div class="section-heading">
+                <p class="eyebrow">Как выстраивается работа</p>
+                <h2>Четыре шага от хаоса к финансовому порядку</h2>
+            </div>
+            <div class="workflow-grid">
+                <article class="workflow-card">
+                    <span>01</span>
+                    <h3>Диагностика</h3>
+                    <p>Проводим бесплатный 60-минутный разбор финансовой ситуации, находим главные потери и точки роста.</p>
+                </article>
+                <article class="workflow-card">
+                    <span>02</span>
+                    <h3>Финансовая скорая помощь</h3>
+                    <p>Первые 2-4 недели настраиваем базовый учет и фиксируем реальное положение дел в бизнесе.</p>
+                </article>
+                <article class="workflow-card">
+                    <span>03</span>
+                    <h3>Системная работа</h3>
+                    <p>Выстраиваем бюджетирование, контроль расходов, платежный календарь и регулярную отчетность.</p>
+                </article>
+                <article class="workflow-card">
+                    <span>04</span>
+                    <h3>Стратегия роста</h3>
+                    <p>Строим финансовую модель, сценарии развития и план действий для решений на основе цифр.</p>
+                </article>
+            </div>
+        </section>
+
         <section id="portfolio" class="portfolio section-shell">
             <div class="section-heading">
                 <p class="eyebrow">Портфолио</p>
@@ -273,24 +302,66 @@
                 <p class="eyebrow">Кейсы и отзывы</p>
                 <h2>Результаты, которые можно измерить</h2>
             </div>
-            <div class="case-grid">
-                <article class="case-card">
-                    <span>Коммерческая недвижимость</span>
-                    <h3>2 млрд ₽ дополнительного финансирования</h3>
-                    <p>Подготовлена финансовая модель, бизнес-план и обоснование доп. финансирования для завершения строительства торгового центра.</p>
-                </article>
-                <article class="case-card">
-                    <span>Строительство / инжиниринг</span>
-                    <h3>+8% чистой прибыли</h3>
-                    <p>Внедрен управленческий учет, платежный календарь, контроль складских запасов и прозрачная политика дивидендов.</p>
-                </article>
-                <article class="case-card review-card">
-                    <span>Отзыв</span>
-                    <blockquote>
-                        "Работа проведена в срок и с высоким профессионализмом. Это значительно улучшило контроль расходов и оптимизировало процессы."
-                    </blockquote>
-                    <cite>Андрей, директор строительной компании</cite>
-                </article>
+            <div class="carousel-layout">
+                <section class="carousel-block" aria-label="Кейсы">
+                    <div class="carousel-head">
+                        <h3>Кейсы</h3>
+                        <div class="carousel-controls">
+                            <button type="button" data-carousel-prev="cases" aria-label="Предыдущий кейс">←</button>
+                            <button type="button" data-carousel-next="cases" aria-label="Следующий кейс">→</button>
+                        </div>
+                    </div>
+                    <div class="carousel-viewport" data-carousel="cases">
+                        <div class="carousel-track">
+                            <article class="case-card carousel-slide">
+                                <span>Коммерческая недвижимость</span>
+                                <h3>2 млрд ₽ дополнительного финансирования</h3>
+                                <p>Подготовлена финансовая модель, бизнес-план и обоснование доп. финансирования для завершения строительства торгового центра.</p>
+                            </article>
+                            <article class="case-card carousel-slide">
+                                <span>Строительство / инжиниринг</span>
+                                <h3>+8% чистой прибыли</h3>
+                                <p>Внедрен управленческий учет, платежный календарь, контроль складских запасов и прозрачная политика дивидендов.</p>
+                            </article>
+                            <article class="case-card carousel-slide">
+                                <span>Группа компаний</span>
+                                <h3>Бюджетирование с нуля</h3>
+                                <p>Внедрены БДР и БДДС по направлениям, появилась прозрачная картина рентабельности, денежных потоков и инвестиционной нагрузки.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="carousel-dots" data-carousel-dots="cases" aria-label="Навигация по кейсам"></div>
+                </section>
+
+                <section class="carousel-block" aria-label="Отзывы">
+                    <div class="carousel-head">
+                        <h3>Отзывы</h3>
+                        <div class="carousel-controls">
+                            <button type="button" data-carousel-prev="reviews" aria-label="Предыдущий отзыв">←</button>
+                            <button type="button" data-carousel-next="reviews" aria-label="Следующий отзыв">→</button>
+                        </div>
+                    </div>
+                    <div class="carousel-viewport" data-carousel="reviews">
+                        <div class="carousel-track">
+                            <article class="case-card review-card carousel-slide">
+                                <span>Отзыв</span>
+                                <blockquote>"Работа проведена в срок и с высоким профессионализмом. Это значительно улучшило контроль расходов и оптимизировало процессы."</blockquote>
+                                <cite>Андрей, директор строительной компании</cite>
+                            </article>
+                            <article class="case-card review-card carousel-slide">
+                                <span>Отзыв</span>
+                                <blockquote>"Очень благодарны вам за терпение, что всегда были на связи и помогали решать интересующие нас вопросы."</blockquote>
+                                <cite>Игорь, собственник торговой компании</cite>
+                            </article>
+                            <article class="case-card review-card carousel-slide">
+                                <span>Отзыв</span>
+                                <blockquote>"Ирина подбирает индивидуальный подход, объясняет все доступно и понятно, без лишней воды."</blockquote>
+                                <cite>Ольга, ученик курса</cite>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="carousel-dots" data-carousel-dots="reviews" aria-label="Навигация по отзывам"></div>
+                </section>
             </div>
         </section>
 
@@ -311,6 +382,14 @@
                 <article class="faq-item">
                     <button type="button">Можно работать дистанционно?</button>
                     <p>Да. Работа строится через онлайн-встречи, общие таблицы, 1С или текущую учетную систему компании.</p>
+                </article>
+                <article class="faq-item">
+                    <button type="button">Сколько времени вы тратите на мой бизнес?</button>
+                    <p>В зависимости от формата, от 20 до 60 часов в месяц. Объем фиксируется в договоре, а фокус остается на результате и регулярной финансовой картине.</p>
+                </article>
+                <article class="faq-item">
+                    <button type="button">Вы подписываете NDA?</button>
+                    <p>Да. Конфиденциальность финансовых данных закрепляется договором, а рабочие материалы остаются между нами.</p>
                 </article>
             </div>
         </section>

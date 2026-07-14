@@ -37,6 +37,19 @@ Stage 2 covers the first visual redesign pass. The goal is to make the site insp
   - `assets/video/sistema-otchetov-biznesa.mp4`
 - Checked UTF-8 rendering for key Russian HTML content through PowerShell.
 
+## Follow-up visual revisions
+
+- Updated header logo text from `FB` to `FFB`.
+- Increased the hero eyebrow "Финансовый директор на аутсорсе" by approximately 1.5x.
+- Reduced the main hero headline "Порядок в деньгах без сотрудника в штате" by approximately 1.3x.
+- Enlarged the expert photo inside the top dashboard card.
+- Tightened section spacing and card heights so each main screen is closer to one visible viewport on desktop.
+- Added the "Как выстраивается работа" section after the collaboration formats block.
+- Rebuilt "Кейсы и отзывы" as two swipeable carousels with three slides each.
+- Expanded FAQ from three items to five, matching the original content scope.
+- Added carousel controls, dots, and pointer swipe support.
+- Added mobile layout adjustments for the updated dashboard, workflow, carousels, and FAQ.
+
 ## Important notes
 
 - This is a visual prototype stage, not the backend stage.
