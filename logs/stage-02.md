@@ -49,6 +49,11 @@ Stage 2 covers the first visual redesign pass. The goal is to make the site insp
 - Expanded FAQ from three items to five, matching the original content scope.
 - Added carousel controls, dots, and pointer swipe support.
 - Added mobile layout adjustments for the updated dashboard, workflow, carousels, and FAQ.
+- Removed the photo poster from the video section so the block shows only the video player.
+- Added a soft hover zoom for the expert photo in the first-screen dashboard card.
+- Further tightened desktop spacing for 15-inch monitor visibility.
+- Added the "Отрасль бизнеса" field to the contact form.
+- Reworked mobile typography, dashboard layout, buttons, form fields, and card spacing for better readability.
 
 ## Important notes
 
