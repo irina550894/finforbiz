@@ -1,993 +1,368 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Финансовый директор на аутсорсе</title>
-    <!-- Подключение Tailwind CSS для быстрой и безопасной стилизации -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Финансовый директор на аутсорсе для малого и среднего бизнеса. Управленческий учет, cash flow, отчеты, модели и финансовые решения на основе цифр.">
+    <title>Ирина Бирюкова | Финансовый директор на аутсорсе</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body class="bg-white text-gray-900 antialiased pt-16 lg:pt-[76px]">
+<body>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="На главный экран">
+            <span class="brand-mark">FB</span>
+            <span>
+                <strong>Ирина Бирюкова</strong>
+                <small>финансовый директор</small>
+            </span>
+        </a>
 
-    <!-- Хэдер (Светло-серый, черный текст, фиксированный) -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-[#F5F5F5] shadow-sm py-4 lg:py-5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-            <div class="font-bold text-gray-900 text-lg lg:text-xl tracking-tight">Ирина Бирюкова</div>
-            <nav class="flex gap-3 sm:gap-4 lg:gap-8 items-center">
-                <a href="#about" class="text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-900 hover:text-[#E8501A] transition-colors">обо мне</a>
-                <a href="#services" class="text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-900 hover:text-[#E8501A] transition-colors">услуги</a>
-                <a href="#cases" class="text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-900 hover:text-[#E8501A] transition-colors">кейсы</a>
-                <a href="#contacts" class="text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-900 hover:text-[#E8501A] transition-colors">контакты</a>
-            </nav>
-        </div>
+        <nav class="main-nav" aria-label="Основная навигация">
+            <a href="#about">Обо мне</a>
+            <a href="#formats">Форматы</a>
+            <a href="#portfolio">Портфолио</a>
+            <a href="#cases">Кейсы</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+
+        <a class="header-action" href="#contacts">Разбор</a>
     </header>
 
-    <!-- Блок 1: Hero -->
-    <section class="relative min-h-[calc(100svh-4rem)] lg:min-h-[calc(100svh-5rem)] flex items-center py-8 lg:py-0 overflow-hidden box-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-                
-                <div class="flex flex-col space-y-6 order-2 lg:order-1">
-                    <div class="space-y-4 max-w-2xl">
-                        <h1 class="text-[29px] sm:text-[38px] lg:text-[51px] font-bold leading-[1.1] tracking-tight text-gray-900">
-                            Финансовый директор на аутсорсе:<br>порядок в деньгах без сотрудника в штате
-                        </h1>
-                        <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
-                            Навожу финансовый порядок в бизнесе: выстраиваю управленческий учет, нахожу скрытые потери и помогаю принимать решения на основе цифр. Работаю с компаниями от 10 млн рублей выручки в год.
-                        </p>
-                    </div>
-
-                    <div class="pt-2">
-                        <a href="#contacts" class="btn-accent inline-flex justify-center items-center px-8 py-4 text-base font-semibold w-full sm:w-auto text-center focus:outline-none">
-                            Записаться на бесплатный разбор
-                        </a>
-                    </div>
-
-                    <div class="pt-4 mt-2 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                        <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#F5F5F5] text-[#E8501A]">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <div class="flex flex-col">
-                            <p class="text-sm font-medium text-gray-900">
-                                25+ лет практики в финансах реального бизнеса
-                            </p>
-                        </div>
-                    </div>
+    <main id="top">
+        <section class="hero section-shell">
+            <div class="hero-copy">
+                <p class="eyebrow">Финансовый директор на аутсорсе</p>
+                <h1>Порядок в деньгах без сотрудника в штате</h1>
+                <p class="lead">
+                    Выстраиваю управленческий учет, нахожу скрытые потери и помогаю собственнику принимать решения на основе цифр. Работаю с компаниями от 10 млн рублей выручки в год.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#contacts">Записаться на бесплатный разбор</a>
+                    <a class="btn btn-secondary" href="#portfolio">Смотреть портфолио</a>
                 </div>
-
-                <div class="order-1 lg:order-2 relative w-full h-[35vh] min-h-[220px] max-h-[350px] lg:h-[65vh] lg:min-h-[500px] lg:max-h-[650px] rounded-[24px] sm:rounded-[32px] bg-[#F5F5F5] overflow-hidden group shadow-lg">
-                    <img src="https://i.yapx.ru/du89i.png" alt="Фото эксперта" class="object-cover w-full h-full object-top transition-transform duration-700 ease-in-out group-hover:scale-105" loading="eager">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок 2: Чем я могу быть полезна -->
-    <section class="relative min-h-[100svh] flex flex-col justify-center py-12 lg:py-4 bg-[#F5F5F5] box-border border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            
-            <div class="text-center mb-8 lg:mb-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-                    Чем я могу быть полезна вашему бизнесу
-                </h2>
+                <dl class="hero-stats" aria-label="Ключевые показатели опыта">
+                    <div>
+                        <dt>25+ лет</dt>
+                        <dd>в финансах реального бизнеса</dd>
+                    </div>
+                    <div>
+                        <dt>2,5 млрд ₽</dt>
+                        <dd>опыт компаний по выручке</dd>
+                    </div>
+                    <div>
+                        <dt>10+ чел.</dt>
+                        <dd>финансовые команды в управлении</dd>
+                    </div>
+                </dl>
             </div>
 
-            <!-- Адаптивная сетка: на мобильных вертикально, на десктопе в ряд -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 pb-4 items-stretch">
-                
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 shadow-sm border border-gray-100 flex flex-col transition-shadow hover:shadow-md">
-                    <span class="text-[11px] font-bold text-[#E8501A] uppercase tracking-wider block mb-2">услуги</span>
-                    <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-4">что я делаю для вашего бизнеса</h3>
-                    <div class="flex flex-wrap gap-2 mb-6 flex-1">
-                        <span class="px-3 py-1 bg-gray-50 border border-gray-100 text-gray-600 rounded-full text-xs">управленческий учет</span>
-                        <span class="px-3 py-1 bg-gray-50 border border-gray-100 text-gray-600 rounded-full text-xs">бюджетирование</span>
-                        <span class="px-3 py-1 bg-gray-50 border border-gray-100 text-gray-600 rounded-full text-xs">финансовые модели</span>
-                        <span class="px-3 py-1 bg-gray-50 border border-gray-100 text-gray-600 rounded-full text-xs">контроль cash flow</span>
-                        <span class="px-3 py-1 bg-gray-50 border border-gray-100 text-gray-600 rounded-full text-xs">анализ рентабельности</span>
-                    </div>
-                    <a href="#services" class="text-[#E8501A] font-semibold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all mt-auto w-fit">
-                        подробнее об услугах
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
+            <div class="dashboard-hero" aria-label="Визуальная финансовая панель">
+                <aside class="dashboard-sidebar">
+                    <div class="sidebar-logo">FinBoard</div>
+                    <a class="sidebar-item is-active" href="#top">Панель</a>
+                    <a class="sidebar-item" href="#formats">Форматы</a>
+                    <a class="sidebar-item" href="#portfolio">Отчеты</a>
+                    <a class="sidebar-item" href="#cases">Кейсы</a>
+                    <a class="sidebar-item" href="#contacts">Заявка</a>
+                    <span class="sidebar-contact">60 минут разбор</span>
+                </aside>
 
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 shadow-sm border border-gray-100 flex flex-col transition-shadow hover:shadow-md">
-                    <span class="text-[11px] font-bold text-[#E8501A] uppercase tracking-wider block mb-2">отзывы</span>
-                    <blockquote class="text-base lg:text-lg font-medium text-gray-900 italic mb-4">
-                        «Выражаю благодарность за внедрение управленческого учета в нашей компании»
+                <div class="dashboard-main">
+                    <div class="dashboard-topline">
+                        <div>
+                            <span>Сегодня</span>
+                            <strong>финансовая картина бизнеса</strong>
+                        </div>
+                        <img src="./assets/images/irina-biryukova.png" alt="Ирина Бирюкова">
+                    </div>
+
+                    <div class="metric-grid">
+                        <article class="metric-card">
+                            <span>Прибыль</span>
+                            <strong>+8%</strong>
+                            <small>рост за 5 месяцев</small>
+                        </article>
+                        <article class="metric-card">
+                            <span>Cash flow</span>
+                            <strong>ДДС</strong>
+                            <small>контроль платежей</small>
+                        </article>
+                        <article class="metric-card">
+                            <span>Бюджет</span>
+                            <strong>БДР</strong>
+                            <small>план-факт анализ</small>
+                        </article>
+                    </div>
+
+                    <div class="finance-route">
+                        <div class="route-header">
+                            <span>Платежный календарь</span>
+                            <strong>без кассовых разрывов</strong>
+                        </div>
+                        <div class="route-line" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-bottom">
+                        <article class="soft-card">
+                            <span>Отчеты</span>
+                            <strong>P&L, ДДС, баланс</strong>
+                            <small>единая система управленческого учета</small>
+                        </article>
+                        <article class="soft-card accent-card">
+                            <span>Решения</span>
+                            <strong>цифры вместо интуиции</strong>
+                            <small>сценарии роста и безопасные дивиденды</small>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pain-panel section-shell">
+            <div class="section-heading">
+                <p class="eyebrow">Когда нужен финдиректор</p>
+                <h2>Собственник видит выручку, но не видит реальную прибыль</h2>
+            </div>
+            <div class="problem-grid">
+                <article>
+                    <span class="problem-index">01</span>
+                    <h3>Деньги уходят незаметно</h3>
+                    <p>Выручка растет, но свободных денег нет. Неясно, какие направления действительно зарабатывают.</p>
+                </article>
+                <article>
+                    <span class="problem-index">02</span>
+                    <h3>Кассовые разрывы повторяются</h3>
+                    <p>Платежи, закупки, зарплаты и налоги живут отдельно, поэтому бизнес регулярно тушит пожары.</p>
+                </article>
+                <article>
+                    <span class="problem-index">03</span>
+                    <h3>Нет управленческой отчетности</h3>
+                    <p>Бухгалтерия есть, но для решений нужны ДДС, P&L, баланс, план-факт и понятная модель движения денег.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="video-section section-shell">
+            <div class="section-heading compact">
+                <p class="eyebrow">Видео</p>
+                <h2>Что дает система отчетов бизнесу</h2>
+                <p>Короткое объяснение, зачем собственнику управленческий учет и как он меняет качество решений.</p>
+            </div>
+            <div class="video-frame">
+                <video controls preload="metadata" poster="./assets/images/irina-biryukova.png">
+                    <source src="./assets/video/sistema-otchetov-biznesa.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </section>
+
+        <section id="about" class="about section-shell">
+            <div class="profile-card">
+                <img src="./assets/images/irina-biryukova.png" alt="Ирина Бирюкова">
+                <div>
+                    <p class="eyebrow">Обо мне</p>
+                    <h2>Я помогаю собственнику управлять деньгами, а не реагировать на проблемы</h2>
+                    <p>
+                        Меня зовут Ирина Бирюкова. Более 25 лет работаю в финансах: управленческий учет, бюджетирование, финансовые модели, контроль cash flow и поддержка собственников.
+                    </p>
+                    <p>
+                        Специализируюсь на строительных, инжиниринговых, торговых и сервисных компаниях малого и среднего бизнеса. Ценю конкретику, прозрачность и результат, который можно измерить в деньгах.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="formats" class="formats section-shell">
+            <div class="section-heading">
+                <p class="eyebrow">Форматы сотрудничества</p>
+                <h2>Выберите уровень погружения в финансы бизнеса</h2>
+            </div>
+            <div class="pricing-grid">
+                <article class="price-card">
+                    <span class="tag">контроль</span>
+                    <h3>Финансовый контроль</h3>
+                    <strong class="price">от 65 000 ₽ <small>/ мес</small></strong>
+                    <ul>
+                        <li>Управленческий учет: ДДС и P&L</li>
+                        <li>Еженедельный отчет по движению денег</li>
+                        <li>2 онлайн-встречи в месяц</li>
+                        <li>Контроль дебиторской задолженности</li>
+                    </ul>
+                    <a class="btn btn-secondary" href="#contacts">Выбрать</a>
+                </article>
+                <article class="price-card featured">
+                    <span class="tag">развитие</span>
+                    <h3>Финансовое управление</h3>
+                    <strong class="price">от 150 000 ₽ <small>/ мес</small></strong>
+                    <ul>
+                        <li>Все из формата "Контроль"</li>
+                        <li>БДР, БДДС, управленческий баланс</li>
+                        <li>План-факт анализ</li>
+                        <li>Участие в управленческих встречах</li>
+                    </ul>
+                    <a class="btn btn-primary" href="#contacts">Выбрать</a>
+                </article>
+                <article class="price-card">
+                    <span class="tag">партнерство</span>
+                    <h3>Финансовый партнер</h3>
+                    <strong class="price">по запросу</strong>
+                    <ul>
+                        <li>Стратегия и финансовое планирование</li>
+                        <li>Управление cash flow</li>
+                        <li>Инвестиционная и кредитная модель</li>
+                        <li>Поддержка собственника</li>
+                    </ul>
+                    <a class="btn btn-secondary" href="#contacts">Обсудить</a>
+                </article>
+                <article class="price-card">
+                    <span class="tag">проект</span>
+                    <h3>Проектная работа</h3>
+                    <strong class="price">по запросу</strong>
+                    <ul>
+                        <li>Внедрение управленческого учета</li>
+                        <li>Аудит отчетности</li>
+                        <li>Дашборды и калькуляторы</li>
+                        <li>Индивидуальные сервисы под автоматизацию задач</li>
+                    </ul>
+                    <a class="btn btn-secondary" href="#contacts">Обсудить</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio section-shell">
+            <div class="section-heading">
+                <p class="eyebrow">Портфолио</p>
+                <h2>Инструменты, которые помогают управлять бизнесом</h2>
+            </div>
+            <div class="portfolio-grid">
+                <article class="portfolio-card wide">
+                    <span>Отчеты</span>
+                    <h3>P&L, ДДС, баланс</h3>
+                    <p>Система регулярной отчетности, которая показывает прибыль, деньги и устойчивость бизнеса.</p>
+                    <div class="mini-table" aria-hidden="true">
+                        <span>Выручка</span><strong>12,4 млн ₽</strong>
+                        <span>Маржа</span><strong>34%</strong>
+                        <span>Свободные деньги</span><strong>2,1 млн ₽</strong>
+                    </div>
+                </article>
+                <article class="portfolio-card gradient">
+                    <span>Калькуляторы</span>
+                    <h3>Маржинальность и дивиденды</h3>
+                    <p>Расчеты, которые помогают понимать, сколько можно безопасно выводить из бизнеса.</p>
+                </article>
+                <article class="portfolio-card">
+                    <span>Модели</span>
+                    <h3>Финансовые сценарии</h3>
+                    <p>Прогнозы роста, кредитной нагрузки, окупаемости и денежных потоков.</p>
+                </article>
+                <article class="portfolio-card">
+                    <span>Автоматизация</span>
+                    <h3>Сервисы под задачи</h3>
+                    <p>Индивидуальные инструменты для регулярных отчетов, контроля платежей и сбора данных.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="cases" class="cases section-shell">
+            <div class="section-heading">
+                <p class="eyebrow">Кейсы и отзывы</p>
+                <h2>Результаты, которые можно измерить</h2>
+            </div>
+            <div class="case-grid">
+                <article class="case-card">
+                    <span>Коммерческая недвижимость</span>
+                    <h3>2 млрд ₽ дополнительного финансирования</h3>
+                    <p>Подготовлена финансовая модель, бизнес-план и обоснование доп. финансирования для завершения строительства торгового центра.</p>
+                </article>
+                <article class="case-card">
+                    <span>Строительство / инжиниринг</span>
+                    <h3>+8% чистой прибыли</h3>
+                    <p>Внедрен управленческий учет, платежный календарь, контроль складских запасов и прозрачная политика дивидендов.</p>
+                </article>
+                <article class="case-card review-card">
+                    <span>Отзыв</span>
+                    <blockquote>
+                        "Работа проведена в срок и с высоким профессионализмом. Это значительно улучшило контроль расходов и оптимизировало процессы."
                     </blockquote>
-                    <div class="text-sm text-gray-600 mb-3">Андрей, собственник компании</div>
-                    <div class="text-sm text-gray-800 bg-orange-50/50 p-3 rounded-lg border border-orange-100/50 mb-6 flex-1">
-                        улучшен контроль расходов и оптимизированы процессы
-                    </div>
-                    <a href="#cases" class="text-[#E8501A] font-semibold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all mt-auto w-fit">
-                        читать все отзывы
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
-
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 shadow-sm border border-gray-100 flex flex-col transition-shadow hover:shadow-md">
-                    <span class="text-[11px] font-bold text-[#E8501A] uppercase tracking-wider block mb-2">форматы работы</span>
-                    <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-4">уровни погружения в ваш бизнес</h3>
-                    <ul class="space-y-3 mb-6 flex-1 text-sm text-gray-700">
-                        <li class="flex justify-between border-b border-gray-50 pb-2">
-                            <span class="font-medium text-gray-900">контроль</span>
-                        </li>
-                        <li class="flex justify-between border-b border-gray-50 pb-2">
-                            <span class="font-medium text-gray-900">развитие</span>
-                        </li>
-                        <li class="flex justify-between border-b border-gray-50 pb-2">
-                            <span class="font-medium text-gray-900">партнерство</span>
-                        </li>
-                        <li class="flex justify-between">
-                            <span class="font-medium text-gray-900">проект</span>
-                        </li>
-                    </ul>
-                    <a href="#services" class="text-[#E8501A] font-semibold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all mt-auto w-fit">
-                        выбрать формат
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
-
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 shadow-sm border border-gray-100 flex flex-col transition-shadow hover:shadow-md">
-                    <span class="text-[11px] font-bold text-[#E8501A] uppercase tracking-wider block mb-2">примеры результатов</span>
-                    <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-4">цифры, которых достигли клиенты</h3>
-                    <ul class="space-y-3 mb-6 flex-1">
-                        <li class="flex items-start gap-3">
-                            <div class="flex-shrink-0 mt-1 w-5 h-5 rounded-full bg-green-50 text-green-500 flex items-center justify-center">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </div>
-                            <span class="text-sm text-gray-800 font-medium">+8% чистая прибыль за 5 месяцев</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="flex-shrink-0 mt-1 w-5 h-5 rounded-full bg-green-50 text-green-500 flex items-center justify-center">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </div>
-                            <span class="text-sm text-gray-800 font-medium">+2 млрд ₽ кредитной линии для строительства ТРК</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="flex-shrink-0 mt-1 w-5 h-5 rounded-full bg-green-50 text-green-500 flex items-center justify-center">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                            </div>
-                            <span class="text-sm text-gray-800 font-medium">бюджет группы компаний с нуля</span>
-                        </li>
-                    </ul>
-                    <a href="#cases" class="text-[#E8501A] font-semibold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all mt-auto w-fit">
-                        смотреть кейсы
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
-
+                    <cite>Андрей, директор строительной компании</cite>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Блок 3: Видео -->
-    <section class="relative min-h-[100svh] flex flex-col justify-center py-12 lg:py-4 bg-white box-border border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            
-            <div class="text-center mb-4 lg:mb-6">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-                    Почему без управленческого учета вы управляете бизнесом вслепую
-                </h2>
-                <p class="mt-2 text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                    смотрите короткое видео, объясняю за 3 минуты, что это такое и почему критично для вашего бизнеса
-                </p>
+        <section class="faq section-shell">
+            <div class="section-heading compact">
+                <p class="eyebrow">FAQ</p>
+                <h2>Частые вопросы</h2>
             </div>
+            <div class="faq-list">
+                <article class="faq-item">
+                    <button type="button">Чем финансовый директор отличается от бухгалтера?</button>
+                    <p>Бухгалтер занимается регламентированной отчетностью. Финансовый директор помогает управлять деньгами, прибыльностью, бюджетами и решениями собственника.</p>
+                </article>
+                <article class="faq-item">
+                    <button type="button">Как быстро будет виден результат?</button>
+                    <p>Первые инсайты появляются через 2-4 недели. Системный результат обычно формируется за 1-3 месяца регулярной работы.</p>
+                </article>
+                <article class="faq-item">
+                    <button type="button">Можно работать дистанционно?</button>
+                    <p>Да. Работа строится через онлайн-встречи, общие таблицы, 1С или текущую учетную систему компании.</p>
+                </article>
+            </div>
+        </section>
 
-            <!-- Видео-плеер Kinescope -->
-            <div class="max-w-lg xl:max-w-xl mx-auto w-full mb-4 lg:mb-6 rounded-[24px] overflow-hidden shadow-sm border border-gray-100 bg-gray-900 relative">
-                <div style="position: relative; padding-top: 56.25%; width: 100%">
-                    <iframe src="https://kinescope.io/embed/7vZWJGLfPmQUKGxaN72JC9" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;" frameborder="0" allowfullscreen style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe>
+        <section id="contacts" class="contacts section-shell">
+            <div class="contact-copy">
+                <p class="eyebrow">Заявка</p>
+                <h2>Готовы разобраться с финансами?</h2>
+                <p>Оставьте контакты для бесплатного 60-минутного разбора. На следующих этапах форма будет подключена к email и Telegram.</p>
+                <div class="direct-links">
+                    <a href="https://t.me/IrinaBiryikova" target="_blank" rel="noopener noreferrer">@IrinaBiryikova</a>
+                    <a href="mailto:irina550894@mail.com">irina550894@mail.com</a>
                 </div>
             </div>
+            <form class="contact-form" id="contact-form">
+                <label>
+                    <span>Имя</span>
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </label>
+                <label>
+                    <span>Телефон</span>
+                    <input type="tel" name="phone" placeholder="+7 (999) 000-00-00" required>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="Ваш email" required>
+                </label>
+                <label>
+                    <span>Выручка бизнеса</span>
+                    <select name="revenue">
+                        <option value="">Выберите диапазон</option>
+                        <option>до 10 млн ₽</option>
+                        <option>10-50 млн ₽</option>
+                        <option>50-200 млн ₽</option>
+                        <option>более 200 млн ₽</option>
+                    </select>
+                </label>
+                <label class="consent">
+                    <input type="checkbox" name="consent" required>
+                    <span>Согласен на обработку персональных данных и принимаю <a href="./privacy.html">политику конфиденциальности</a>.</span>
+                </label>
+                <button class="btn btn-primary" type="submit">Записаться на бесплатный разбор</button>
+                <p class="form-note" id="form-note">Пока форма работает как визуальный прототип. Отправка будет подключена на этапе backend.</p>
+            </form>
+        </section>
+    </main>
 
-            <!-- Сетка карточек -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4 pb-2 items-stretch">
-                
-                <div class="bg-[#F5F5F5] rounded-[20px] p-4 lg:p-5 flex flex-col transition-transform md:hover:-translate-y-1">
-                    <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#E8501A] shadow-sm mb-3">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
-                    </div>
-                    <h3 class="text-base lg:text-lg font-bold text-gray-900 mb-1.5">что такое управленческий учет</h3>
-                    <p class="text-xs lg:text-sm text-gray-700 leading-relaxed">
-                        это не бухгалтерия. система, которая показывает реальное состояние бизнеса
-                    </p>
-                </div>
+    <footer class="site-footer">
+        <span>© 2026 Ирина Бирюкова. Финансовый директор на аутсорсе.</span>
+        <a href="./privacy.html">Политика конфиденциальности</a>
+    </footer>
 
-                <div class="bg-[#F5F5F5] rounded-[20px] p-4 lg:p-5 flex flex-col transition-transform md:hover:-translate-y-1">
-                    <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#E8501A] shadow-sm mb-3">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-base lg:text-lg font-bold text-gray-900 mb-1.5">зачем он нужен именно вам</h3>
-                    <p class="text-xs lg:text-sm text-gray-700 leading-relaxed">
-                        без него вы не знаете, сколько реально зарабатываете, даже при росте выручки
-                    </p>
-                </div>
-
-                <div class="bg-[#F5F5F5] rounded-[20px] p-4 lg:p-5 flex flex-col transition-transform md:hover:-translate-y-1">
-                    <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#E8501A] shadow-sm mb-3">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                    </div>
-                    <h3 class="text-base lg:text-lg font-bold text-gray-900 mb-1.5">как это работает на практике</h3>
-                    <p class="text-xs lg:text-sm text-gray-700 leading-relaxed">
-                        три отчета (p&l, ддс, баланс) дают полную картину сколько заработали, сколько свободных денег и где риски.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок 4: Квалификация и боли -->
-    <section class="relative min-h-[100svh] flex flex-col justify-center py-12 lg:py-4 bg-[#F5F5F5] box-border border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            
-            <div class="text-center mb-8 lg:mb-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-                    Узнаете себя в этих ситуациях?
-                </h2>
-                <p class="mt-2 text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                    помогаю собственникам управлять бизнесом на основе цифр, а не интуиции
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 pb-4 items-stretch">
-                
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 shadow-sm border border-gray-100 flex flex-col transition-shadow hover:shadow-md">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gray-100 text-gray-400">
-                            <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg lg:text-xl font-semibold text-gray-900">
-                            запросы вне моей специализации
-                        </h3>
-                    </div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <div class="flex-shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-                            <span class="text-gray-600 text-sm sm:text-base">нужен бухгалтер для сдачи отчетности</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="flex-shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-                            <span class="text-gray-600 text-sm sm:text-base">нет действующего бизнеса (стартап без продаж)</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="flex-shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-                            <span class="text-gray-600 text-sm sm:text-base">нужна разовая консультация по налогам</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 shadow-sm border border-orange-100 relative overflow-hidden flex flex-col transition-shadow hover:shadow-md">
-                    <div class="absolute top-0 left-0 w-full h-1.5 bg-[#E8501A]"></div>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-orange-50 text-[#E8501A]">
-                            <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg lg:text-xl font-semibold text-gray-900">
-                            вот с чем я работаю
-                        </h3>
-                    </div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <div class="flex-shrink-0 mt-2 w-2 h-2 rounded-full bg-[#E8501A]"></div>
-                            <span class="text-gray-800 font-medium text-sm sm:text-base">непонятно, куда уходят деньги при растущей выручке</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="flex-shrink-0 mt-2 w-2 h-2 rounded-full bg-[#E8501A]"></div>
-                            <span class="text-gray-800 font-medium text-sm sm:text-base">кассовые разрывы повторяются каждый квартал</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="flex-shrink-0 mt-2 w-2 h-2 rounded-full bg-[#E8501A]"></div>
-                            <span class="text-gray-800 font-medium text-sm sm:text-base">нет понимания реальной прибыли и рентабельности</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок 5: Обо мне -->
-    <section id="about" class="relative min-h-[100svh] flex flex-col justify-center py-12 lg:py-4 bg-white box-border border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                
-                <div>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-3">
-                        Обо мне
-                    </h2>
-                    <p class="text-base lg:text-lg text-[#E8501A] font-medium mb-4">
-                        финансовый директор с практическим опытом в реальном бизнесе
-                    </p>
-                    <div class="space-y-2.5 lg:space-y-3 text-gray-700 text-[13px] lg:text-[15px] leading-relaxed">
-                        <p>Меня зовут Ирина Бирюкова, работаю в сфере финансов более 25 лет. Специализируюсь на строительных, инжиниринговых, торговых и сервисных компаниях малого и среднего бизнеса.</p>
-                        <p>Работала в компаниях с выручкой 2,5 млрд ₽, штатом более 100 чел., финансовой и бухгалтерской службой более 10 чел.</p>
-                        <p>Высшее образование, экономист, профессиональный бухгалтер. Была куратором на курсе по управленческому учету, получила диплом II степени в онлайн-хакатоне «AI-навыки финансиста», применяю AI-инструменты в своей работе.</p>
-                        <p>Ценю конкретику, прозрачность и результат, который можно измерить в деньгах.</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3 lg:gap-4">
-                    <div class="bg-[#F5F5F5] rounded-[24px] p-4 lg:p-5 border border-transparent transition-transform hover:-translate-y-1 flex flex-col justify-center">
-                        <div class="text-xl lg:text-2xl font-bold text-gray-900 mb-1">+25 лет</div>
-                        <p class="text-[11px] lg:text-sm text-gray-600 leading-snug">практики в финансах реального бизнеса</p>
-                    </div>
-                    <div class="bg-[#F5F5F5] rounded-[24px] p-4 lg:p-5 border border-transparent transition-transform hover:-translate-y-1 flex flex-col justify-center">
-                        <div class="text-xl lg:text-2xl font-bold text-gray-900 mb-1">+2 млрд ₽</div>
-                        <p class="text-[11px] lg:text-sm text-gray-600 leading-snug">кредитной линии для строительства</p>
-                    </div>
-                    <div class="bg-[#F5F5F5] rounded-[24px] p-4 lg:p-5 border border-transparent transition-transform hover:-translate-y-1 flex flex-col justify-center">
-                        <div class="text-xl lg:text-2xl font-bold text-gray-900 mb-1">+ бюджет</div>
-                        <p class="text-[11px] lg:text-sm text-gray-600 leading-snug">группы компаний с нуля</p>
-                    </div>
-                    <div class="bg-[#F5F5F5] rounded-[24px] p-4 lg:p-5 border border-transparent transition-transform hover:-translate-y-1 flex flex-col justify-center">
-                        <div class="text-xl lg:text-2xl font-bold text-gray-900 mb-1">+8%</div>
-                        <p class="text-[11px] lg:text-sm text-gray-600 leading-snug">чистая прибыль за 5 месяцев</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок 6: Как выстраивается работа -->
-    <section class="relative min-h-[100svh] flex flex-col justify-center py-12 lg:py-4 bg-[#F5F5F5] border-t border-gray-200 box-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            
-            <div class="text-center mb-8 lg:mb-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-                    Как выстраивается работа
-                </h2>
-                <p class="mt-2 text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                    четыре шага от хаоса к финансовому порядку
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 pb-4 relative">
-
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 relative overflow-hidden flex flex-col transition-transform md:hover:-translate-y-1 shadow-sm border border-gray-100">
-                    <div class="absolute -right-2 -bottom-4 text-[80px] lg:text-[100px] font-bold text-gray-100 opacity-80 leading-none select-none">1</div>
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 lg:gap-4 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#E8501A] flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-900">диагностика (бесплатно)</h3>
-                        </div>
-                        <p class="text-sm lg:text-base text-gray-700 leading-relaxed">
-                            проводим 60-минутный разбор вашей финансовой ситуации. выявляем главные потери и точки роста. Вы получаете ясность, даже если мы не продолжаем работу.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 relative overflow-hidden flex flex-col transition-transform md:hover:-translate-y-1 shadow-sm border border-gray-100">
-                    <div class="absolute -right-2 -bottom-4 text-[80px] lg:text-[100px] font-bold text-gray-100 opacity-80 leading-none select-none">2</div>
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 lg:gap-4 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#E8501A] flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-900">финансовая скорая помощь</h3>
-                        </div>
-                        <p class="text-sm lg:text-base text-gray-700 leading-relaxed">
-                            первые 2-4 недели: настраиваем базовый учет, фиксируем реальное положение дел. Вы впервые видите, где на самом деле находится бизнес.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 relative overflow-hidden flex flex-col transition-transform md:hover:-translate-y-1 shadow-sm border border-gray-100">
-                    <div class="absolute -right-2 -bottom-4 text-[80px] lg:text-[100px] font-bold text-gray-100 opacity-80 leading-none select-none">3</div>
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 lg:gap-4 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#E8501A] flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-900">системная работа</h3>
-                        </div>
-                        <p class="text-sm lg:text-base text-gray-700 leading-relaxed">
-                            выстраиваем бюджетирование, контроль расходов и регулярную отчетность. Вы начинаете управлять деньгами, а не реагировать на проблемы.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-[24px] p-6 lg:p-8 relative overflow-hidden flex flex-col transition-transform md:hover:-translate-y-1 shadow-sm border border-gray-100">
-                    <div class="absolute -right-2 -bottom-4 text-[80px] lg:text-[100px] font-bold text-gray-100 opacity-80 leading-none select-none">4</div>
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 lg:gap-4 mb-4">
-                            <div class="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#E8501A] flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-900">стратегия роста</h3>
-                        </div>
-                        <p class="text-sm lg:text-base text-gray-700 leading-relaxed">
-                            строим финансовую модель, сценарии развития и план действий. Вы принимаете решения на основе цифр, а не интуиции.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="mt-8 text-center">
-                 <a href="#contacts" class="btn-accent inline-flex justify-center items-center px-8 py-4 text-base font-semibold w-full sm:w-auto text-center focus:outline-none">
-                    Записаться на диагностику
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Блок 7: Кейсы и отзывы -->
-    <section id="cases" class="relative min-h-[100svh] flex flex-col justify-center py-12 lg:py-4 bg-white box-border border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            
-            <div class="text-center mb-8 lg:mb-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-                    Кейсы и отзывы
-                </h2>
-                <p class="mt-2 text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                    реальные истории роста и мнения собственников бизнеса
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 overflow-hidden">
-                
-                <!-- Левая колонка: Слайдер с кейсами -->
-                <div class="flex flex-col w-full min-w-0">
-                    <div class="flex items-center justify-between mb-4 pl-1 lg:pl-0">
-                        <h3 class="text-xl lg:text-2xl font-bold text-gray-900">кейсы</h3>
-                        <div class="flex gap-2">
-                            <button onclick="moveSlider('cases', -1)" class="w-8 h-8 rounded-full bg-[#F5F5F5] flex items-center justify-center text-gray-600 hover:text-[#E8501A] transition-colors focus:outline-none">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                            </button>
-                            <button onclick="moveSlider('cases', 1)" class="w-8 h-8 rounded-full bg-[#F5F5F5] flex items-center justify-center text-gray-600 hover:text-[#E8501A] transition-colors focus:outline-none">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="relative overflow-hidden w-full pb-2">
-                        <div id="slider-track-cases" class="flex transition-transform duration-500 ease-in-out items-stretch">
-                            
-                            <div class="w-full flex-shrink-0 px-1 flex">
-                                <div class="bg-[#F5F5F5] rounded-[20px] p-5 lg:p-6 flex flex-col w-full border border-transparent transition-transform md:hover:-translate-y-1">
-                                    <div class="mb-4 border-b border-gray-200 pb-3">
-                                        <span class="bg-white text-gray-700 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide uppercase inline-block">коммерческая недвижимость</span>
-                                    </div>
-                                    <div class="space-y-3 flex-1">
-                                        <div>
-                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-0.5">ситуация:</span>
-                                            <p class="text-[11px] lg:text-xs text-gray-700 leading-relaxed">компания реализовывала проект строительства ТЦ за счет кредитного финансирования. на середине строительства стало понятно, что первоначального бюджета недостаточно для завершения проекта, возник риск остановки стройки и кассового разрыва.</p>
-                                        </div>
-                                        <div>
-                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-0.5">решение:</span>
-                                            <p class="text-[11px] lg:text-xs text-gray-700 leading-relaxed">я подготовила детальный бизнес-план и финансовую модель проекта, пересчитала экономику строительства, прогноз денежных потоков и показатели окупаемости, обосновала необходимость доп. финансирования.</p>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4 bg-white p-3 lg:p-4 rounded-xl border border-gray-100">
-                                        <span class="text-[10px] font-bold text-[#E8501A] uppercase tracking-wider block mb-0.5">результат:</span>
-                                        <p class="text-[11px] lg:text-xs font-semibold text-gray-900 leading-relaxed">получено дополнительное финансирование и рефинансирование проекта на сумму более 2 млрд ₽, строительство торгового центра было успешно продолжено и завершено.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="w-full flex-shrink-0 px-1 flex">
-                                <div class="bg-[#F5F5F5] rounded-[20px] p-5 lg:p-6 flex flex-col w-full border border-transparent transition-transform md:hover:-translate-y-1">
-                                    <div class="mb-4 border-b border-gray-200 pb-3">
-                                        <span class="bg-white text-gray-700 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide uppercase inline-block">строительство / инжиниринг</span>
-                                    </div>
-                                    <div class="space-y-3 flex-1">
-                                        <div>
-                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-0.5">ситуация:</span>
-                                            <p class="text-[11px] lg:text-xs text-gray-700 leading-relaxed">компания регулярно сталкивалась с кассовыми разрывами, отсутствовало понимание, какую сумму собственник может безопасно выводить в виде дивидендов без ущерба для бизнеса. не велся полноценный учет складских запасов и материальных ресурсов, закупки были слабо контролируемы.</p>
-                                        </div>
-                                        <div>
-                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-0.5">решение:</span>
-                                            <p class="text-[11px] lg:text-xs text-gray-700 leading-relaxed">я выстроила систему управленческого учета, внедрила платежный календарь. наладила учет и контроль складских запасов, провела анализ закупок и инициировала замену ключевого поставщика. разработана прозрачная политика расчета и выплаты дивидендов.</p>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4 bg-white p-3 lg:p-4 rounded-xl border border-gray-100">
-                                        <span class="text-[10px] font-bold text-[#E8501A] uppercase tracking-wider block mb-0.5">результат:</span>
-                                        <p class="text-[11px] lg:text-xs font-semibold text-gray-900 leading-relaxed">рентабельность по чистой прибыли выросла на 8%, компания вышла из постоянных кассовых разрывов, а собственник получил понятную и прозрачную систему получения дивидендов.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="w-full flex-shrink-0 px-1 flex">
-                                <div class="bg-[#F5F5F5] rounded-[20px] p-5 lg:p-6 flex flex-col w-full border border-transparent transition-transform md:hover:-translate-y-1">
-                                    <div class="mb-4 border-b border-gray-200 pb-3">
-                                        <span class="bg-white text-gray-700 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide uppercase inline-block">коммерческая недвижимость</span>
-                                    </div>
-                                    <div class="space-y-3 flex-1">
-                                        <div>
-                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-0.5">ситуация:</span>
-                                            <p class="text-[11px] lg:text-xs text-gray-700 leading-relaxed">компания развивала несколько направлений бизнеса: коммерческую недвижимость, строительство, развлекательные проекты. управленческий учет отсутствовал, инвестиционные решения принимались на основе интуиции.</p>
-                                        </div>
-                                        <div>
-                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-0.5">решение:</span>
-                                            <p class="text-[11px] lg:text-xs text-gray-700 leading-relaxed">я внедрила систему бюджетирования и управленческого учета с детализацией по каждому направлению. были выстроены БДР, БДДС, что позволило анализировать рентабельность, денежные потоки и инвестиционную нагрузку по каждому объекту отдельно.</p>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4 bg-white p-3 lg:p-4 rounded-xl border border-gray-100">
-                                        <span class="text-[10px] font-bold text-[#E8501A] uppercase tracking-wider block mb-0.5">результат:</span>
-                                        <p class="text-[11px] lg:text-xs font-semibold text-gray-900 leading-relaxed">собственник получил прозрачную финансовую систему управления бизнесом и возможность принимать решения на основе цифр. появилось понимание, какие направления приносят максимальную прибыль.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    
-                    <div class="flex justify-center gap-2 mt-5">
-                        <button onclick="setSlider('cases', 0)" class="dot-cases w-6 h-2 rounded-full bg-[#E8501A] transition-all duration-300 focus:outline-none"></button>
-                        <button onclick="setSlider('cases', 1)" class="dot-cases w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 focus:outline-none"></button>
-                        <button onclick="setSlider('cases', 2)" class="dot-cases w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 focus:outline-none"></button>
-                    </div>
-                </div>
-
-                <!-- Правая колонка: Слайдер с отзывами -->
-                <div class="flex flex-col w-full min-w-0">
-                    <div class="flex items-center justify-between mb-4 pl-1 lg:pl-0">
-                        <h3 class="text-xl lg:text-2xl font-bold text-gray-900">отзывы</h3>
-                        <div class="flex gap-2">
-                            <button onclick="moveSlider('reviews', -1)" class="w-8 h-8 rounded-full bg-[#F5F5F5] flex items-center justify-center text-gray-600 hover:text-[#E8501A] transition-colors focus:outline-none">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                            </button>
-                            <button onclick="moveSlider('reviews', 1)" class="w-8 h-8 rounded-full bg-[#F5F5F5] flex items-center justify-center text-gray-600 hover:text-[#E8501A] transition-colors focus:outline-none">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="relative overflow-hidden w-full pb-2">
-                        <div id="slider-track-reviews" class="flex transition-transform duration-500 ease-out items-stretch">
-                            
-                            <!-- Отзыв 1 -->
-                            <div class="w-full flex-shrink-0 px-1 flex">
-                                <div class="bg-[#F5F5F5] rounded-[20px] p-5 lg:p-6 flex flex-col w-full border border-transparent transition-transform md:hover:-translate-y-1 relative">
-                                    <div class="mb-3 flex items-center justify-between">
-                                        <span class="text-xs font-bold text-yellow-500">⭐ ⭐ ⭐ ⭐ ⭐</span>
-                                        <span class="text-[10px] text-gray-500 bg-white px-2 py-1 rounded">сделка состоялась</span>
-                                    </div>
-                                    <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2">финансовый директор / управленческий учет</p>
-                                    <div class="flex-1 overflow-y-auto hide-scrollbar mb-4 max-h-[180px]">
-                                        <p class="text-[11px] lg:text-xs text-gray-700 italic leading-relaxed">
-                                            «Ирина, выражаю благодарность за внедрение управленческого учета в нашей компании. Работа проведена в срок и с высоким профессионализмом. Это значительно улучшило контроль расходов и оптимизировало процессы. Отдельная благодарность за поддержку команды в освоении новых инструментов. Рассчитываем на продолжение сотрудничества.»
-                                        </p>
-                                    </div>
-                                    <div class="border-t border-gray-200 pt-3 mt-auto flex items-center gap-3">
-                                        <div>
-                                            <p class="text-xs lg:text-sm font-semibold text-gray-900">Андрей</p>
-                                            <p class="text-[10px] lg:text-xs text-gray-500">директор строительной компании</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Отзыв 2 -->
-                            <div class="w-full flex-shrink-0 px-1 flex">
-                                <div class="bg-[#F5F5F5] rounded-[20px] p-5 lg:p-6 flex flex-col w-full border border-transparent transition-transform md:hover:-translate-y-1 relative">
-                                    <div class="flex-1 overflow-y-auto hide-scrollbar mb-4 mt-2 max-h-[180px]">
-                                        <p class="text-[11px] lg:text-xs text-gray-700 italic leading-relaxed">
-                                            «Как и говорил на видео встрече, очень благодарны вам за терпение, что всегда были на связи и помогали решать интересующие нас вопросы 🙏 Еще раз спасибо 😇»
-                                        </p>
-                                    </div>
-                                    <div class="border-t border-gray-200 pt-3 mt-auto flex items-center gap-3">
-                                        <div>
-                                            <p class="text-xs lg:text-sm font-semibold text-gray-900">Игорь</p>
-                                            <p class="text-[10px] lg:text-xs text-gray-500">собственник торговой компании</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Отзыв 3 -->
-                            <div class="w-full flex-shrink-0 px-1 flex">
-                                <div class="bg-[#F5F5F5] rounded-[20px] p-5 lg:p-6 flex flex-col w-full border border-transparent transition-transform md:hover:-translate-y-1 relative">
-                                    <div class="flex-1 overflow-y-auto hide-scrollbar mb-4 max-h-[180px]">
-                                        <p class="text-[11px] lg:text-xs text-gray-700 italic leading-relaxed pr-2">
-                                            «Хочу сказать огромное спасибо моему куратору! Ирина всегда на связи, готова помочь и реально заботится о каждом обучающемся. Особенно ценно, что можно было созваниваться лично, это очень выручает, когда что-то непонятно или нужен совет. Простой разговор с человеком, который понимает и может направить. Ирина подбирает индивидуальный подход, объясняет всё доступно и понятно, а главное, без лишней воды. Чувствуется, что ей не всё равно и она действительно хочет, чтобы у нас всех всё получилось 🌻 Понравилось, что даже сложные темы становятся понятными благодаря объяснениям куратора. Плюс, Ирина всегда подбадривала и мотивировала, что особенно важно, когда кажется, что информации слишком много и ты уже окончательно закопалась в цифрах 😅, такая мини-сессия с психологом)). Благодаря такой поддержке обучение стало не просто полезным, но и комфортным. Ирина, спасибо вам огромное за вашу поддержку 🌻🤗.»
-                                        </p>
-                                    </div>
-                                    <div class="border-t border-gray-200 pt-3 mt-auto flex items-center gap-3">
-                                        <div>
-                                            <p class="text-xs lg:text-sm font-semibold text-gray-900">Ольга</p>
-                                            <p class="text-[10px] lg:text-xs text-gray-500">ученик курса</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    
-                    <div class="flex justify-center gap-2 mt-5">
-                        <button onclick="setSlider('reviews', 0)" class="dot-reviews w-6 h-2 rounded-full bg-[#E8501A] transition-all duration-300 focus:outline-none"></button>
-                        <button onclick="setSlider('reviews', 1)" class="dot-reviews w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 focus:outline-none"></button>
-                        <button onclick="setSlider('reviews', 2)" class="dot-reviews w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 focus:outline-none"></button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок 8: Форматы сотрудничества (Тарифы) -->
-    <section id="services" class="relative min-h-[100svh] flex flex-col justify-center py-12 lg:py-4 bg-[#F5F5F5] border-t border-gray-200 box-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            
-            <div class="text-center mb-6 lg:mb-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-                    Форматы сотрудничества
-                </h2>
-                <p class="mt-2 text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                    выберите уровень погружения, я адаптируюсь под масштаб вашего бизнеса
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-4 items-stretch pb-4 pt-6">
-                
-                <div class="bg-white rounded-[24px] p-4 lg:p-5 flex flex-col transition-transform lg:hover:-translate-y-1 shadow-sm border border-gray-100">
-                    <div class="mb-3">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">контроль</h3>
-                        <p class="text-gray-600 text-xs lg:text-sm mb-3">финансовый контроль</p>
-                        <div class="text-xl lg:text-base xl:text-xl font-bold text-gray-900 whitespace-nowrap tracking-tight">
-                            от 49 990 ₽
-                            <span class="text-sm lg:text-xs xl:text-sm font-normal text-gray-500">/ мес</span>
-                        </div>
-                    </div>
-                    
-                    <ul class="space-y-2 lg:space-y-2.5 mb-4 flex-1">
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">ведение управленческого учета (ддс, p&l)</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">еженедельный отчет по движению денег</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">2 онлайн-встречи в месяц</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">контроль дебиторской задолженности</span>
-                        </li>
-                    </ul>
-                    
-                    <a href="#contacts" class="btn-secondary w-full py-3 text-center font-semibold text-sm mt-auto">
-                        выбрать
-                    </a>
-                </div>
-
-                <div class="bg-white rounded-[24px] p-4 lg:p-5 flex flex-col border-2 border-[#E8501A] shadow-lg relative transition-transform lg:-translate-y-2">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#E8501A] text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase whitespace-nowrap">
-                        популярный выбор
-                    </div>
-                    
-                    <div class="mb-3 mt-1">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">развитие</h3>
-                        <p class="text-gray-600 text-xs lg:text-sm mb-3">финансовое управление</p>
-                        <div class="text-xl lg:text-base xl:text-xl font-bold text-gray-900 whitespace-nowrap tracking-tight">
-                            от 99 990 ₽
-                            <span class="text-sm lg:text-xs xl:text-sm font-normal text-gray-500">/ мес</span>
-                        </div>
-                    </div>
-                    
-                    <ul class="space-y-2 lg:space-y-2.5 mb-4 flex-1">
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-900 font-medium leading-snug">всё из формата контроль</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">бдр / бддс / управленческий баланс</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">контроль прибыльности</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">план-факт анализ</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">участие в управленческих встречах</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">2-4 встречи в месяц</span>
-                        </li>
-                    </ul>
-                    
-                    <a href="#contacts" class="btn-accent w-full py-3 text-center font-semibold text-sm mt-auto">
-                        выбрать
-                    </a>
-                </div>
-
-                <div class="bg-white rounded-[24px] p-4 lg:p-5 flex flex-col transition-transform lg:hover:-translate-y-1 shadow-sm border border-gray-100">
-                    <div class="mb-3">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">партнерство</h3>
-                        <p class="text-gray-600 text-xs lg:text-sm mb-3">финансовый партнер</p>
-                        <div class="text-xl lg:text-base xl:text-xl font-bold text-gray-900 whitespace-nowrap tracking-tight">
-                            по запросу
-                        </div>
-                    </div>
-                    
-                    <ul class="space-y-2 lg:space-y-2.5 mb-4 flex-1">
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-900 font-medium leading-snug">всё из формата развитие</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">стратегия и финансовое планирование</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">управление cash flow</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">инвестиционная и кредитная модель</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">оптимизация финансовых процессов</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">поддержка собственника без ограничений</span>
-                        </li>
-                    </ul>
-                    
-                    <a href="#contacts" class="btn-secondary w-full py-3 text-center font-semibold text-sm mt-auto">
-                        обсудить
-                    </a>
-                </div>
-
-                <div class="bg-white rounded-[24px] p-4 lg:p-5 flex flex-col transition-transform lg:hover:-translate-y-1 shadow-sm border border-gray-100">
-                    <div class="mb-3">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">проект</h3>
-                        <p class="text-gray-600 text-xs lg:text-sm mb-3">проектная работа</p>
-                        <div class="text-xl lg:text-base xl:text-xl font-bold text-gray-900 whitespace-nowrap tracking-tight">
-                            по запросу
-                        </div>
-                    </div>
-                    
-                    <ul class="space-y-1.5 lg:space-y-2 mb-4 flex-1">
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">внедрение управленческого учета</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">аудит управленческой отчетности</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">дашборды</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">калькуляторы</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">финансовые модели</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">аналитические записки</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <svg class="w-4 h-4 text-[#E8501A] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span class="text-xs lg:text-[13px] xl:text-sm text-gray-700 leading-snug">отчеты по запросу</span>
-                        </li>
-                    </ul>
-                    
-                    <a href="#contacts" class="btn-secondary w-full py-3 text-center font-semibold text-sm mt-auto">
-                        обсудить
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок 9: Частые вопросы (FAQ) -->
-    <section class="relative min-h-[100svh] flex flex-col justify-center py-12 lg:py-4 bg-white box-border border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            
-            <div class="text-center mb-8 lg:mb-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-                    Частые вопросы
-                </h2>
-                <p class="mt-2 text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                    собрала ответы на самые популярные вопросы о формате работы
-                </p>
-            </div>
-
-            <!-- FAQ Контейнер (одна колонка) -->
-            <div class="max-w-3xl mx-auto space-y-3 lg:space-y-4 w-full">
-                
-                <div class="bg-[#F5F5F5] rounded-[20px] lg:rounded-[24px] overflow-hidden transition-all duration-200">
-                    <button class="w-full px-5 py-4 lg:px-6 lg:py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-sm sm:text-base font-semibold text-gray-900 pr-4">чем финансовый директор на аутсорсе отличается от бухгалтера?</span>
-                        <svg class="w-5 h-5 text-[#E8501A] transform transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="faq-content hidden px-5 pb-4 lg:px-6 lg:pb-5 text-sm text-gray-700 leading-relaxed border-t border-gray-200/50 mt-1 pt-3">
-                        бухгалтер занимается налоговой и бухгалтерской отчетностью. финансовый директор управляет деньгами: строит бюджеты, анализирует прибыльность, предотвращает кассовые разрывы и помогает принимать стратегические решения.
-                    </div>
-                </div>
-
-                <div class="bg-[#F5F5F5] rounded-[20px] lg:rounded-[24px] overflow-hidden transition-all duration-200">
-                    <button class="w-full px-5 py-4 lg:px-6 lg:py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-sm sm:text-base font-semibold text-gray-900 pr-4">сколько времени вы тратите на мой бизнес?</span>
-                        <svg class="w-5 h-5 text-[#E8501A] transform transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="faq-content hidden px-5 pb-4 lg:px-6 lg:pb-5 text-sm text-gray-700 leading-relaxed border-t border-gray-200/50 mt-1 pt-3">
-                        в зависимости от тарифа, от 20 до 60 часов в месяц. фиксируем объем в договоре. вы платите за результат, а не за присутствие.
-                    </div>
-                </div>
-
-                <div class="bg-[#F5F5F5] rounded-[20px] lg:rounded-[24px] overflow-hidden transition-all duration-200">
-                    <button class="w-full px-5 py-4 lg:px-6 lg:py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-sm sm:text-base font-semibold text-gray-900 pr-4">как вы работаете дистанционно?</span>
-                        <svg class="w-5 h-5 text-[#E8501A] transform transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="faq-content hidden px-5 pb-4 lg:px-6 lg:pb-5 text-sm text-gray-700 leading-relaxed border-t border-gray-200/50 mt-1 pt-3">
-                        через общие таблицы, 1С или вашу учетную систему. встречи в Telegram или Zoom. все отчеты предоставляются в удобном вам формате.
-                    </div>
-                </div>
-
-                <div class="bg-[#F5F5F5] rounded-[20px] lg:rounded-[24px] overflow-hidden transition-all duration-200">
-                    <button class="w-full px-5 py-4 lg:px-6 lg:py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-sm sm:text-base font-semibold text-gray-900 pr-4">когда будет виден результат?</span>
-                        <svg class="w-5 h-5 text-[#E8501A] transform transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="faq-content hidden px-5 pb-4 lg:px-6 lg:pb-5 text-sm text-gray-700 leading-relaxed border-t border-gray-200/50 mt-1 pt-3">
-                        первые инсайты появляются уже через 2-4 недели. системный результат (рост рентабельности, устранение кассовых разрывов) достигается в течение 1-3 месяцев.
-                    </div>
-                </div>
-
-                <div class="bg-[#F5F5F5] rounded-[20px] lg:rounded-[24px] overflow-hidden transition-all duration-200">
-                    <button class="w-full px-5 py-4 lg:px-6 lg:py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-sm sm:text-base font-semibold text-gray-900 pr-4">вы подписываете NDA?</span>
-                        <svg class="w-5 h-5 text-[#E8501A] transform transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="faq-content hidden px-5 pb-4 lg:px-6 lg:pb-5 text-sm text-gray-700 leading-relaxed border-t border-gray-200/50 mt-1 pt-3">
-                        да, конфиденциальность гарантируется договором. все финансовые данные вашего бизнеса остаются строго между нами.
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок 10: Форма, Контакты и Подвал -->
-    <section id="contacts" class="relative min-h-[100svh] flex flex-col justify-center py-12 lg:py-16 bg-[#E8501A] box-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                
-                <!-- Левая колонка: Форма -->
-                <div>
-                    <div class="text-center lg:text-left mb-6 lg:mb-8">
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                            Готовы разобраться с финансами?
-                        </h2>
-                        <p class="mt-2 text-base lg:text-lg text-white/80">
-                            оставьте заявку на бесплатный 60-минутный разбор без обязательств
-                        </p>
-                    </div>
-
-                    <div class="bg-white rounded-[24px] p-6 sm:p-8 shadow-lg text-gray-900">
-                        <form class="space-y-4 lg:space-y-5" onsubmit="event.preventDefault();">
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
-                                <div>
-                                    <label for="name" class="sr-only">ваше имя</label>
-                                    <input type="text" id="name" placeholder="ваше имя" class="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-[16px] text-sm focus:bg-white focus:border-[#E8501A] focus:ring-2 focus:ring-orange-500/20 outline-none transition-all" required>
-                                </div>
-                                <div>
-                                    <label for="phone" class="sr-only">телефон</label>
-                                    <input type="tel" id="phone" placeholder="+7 (999) 000-00-00" class="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-[16px] text-sm focus:bg-white focus:border-[#E8501A] focus:ring-2 focus:ring-orange-500/20 outline-none transition-all" required>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="sr-only">email</label>
-                                <input type="email" id="email" placeholder="ваш email" class="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-[16px] text-sm focus:bg-white focus:border-[#E8501A] focus:ring-2 focus:ring-orange-500/20 outline-none transition-all" required>
-                            </div>
-                            
-                            <div class="relative">
-                                <label for="revenue" class="sr-only">выручка бизнеса</label>
-                                <select id="revenue" class="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-[16px] text-sm text-gray-500 focus:bg-white focus:border-[#E8501A] focus:ring-2 focus:ring-orange-500/20 outline-none transition-all appearance-none cursor-pointer">
-                                    <option value="" disabled selected>выручка бизнеса (опционально)</option>
-                                    <option value="1">до 10 млн ₽</option>
-                                    <option value="2">10-50 млн ₽</option>
-                                    <option value="3">50-200 млн ₽</option>
-                                    <option value="4">более 200 млн ₽</option>
-                                </select>
-                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 text-gray-400">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                                </div>
-                            </div>
-                            
-                            <div class="pt-2 lg:pt-4">
-                                <button type="submit" class="btn-dark w-full py-4 text-center font-semibold text-base focus:outline-none">
-                                    Записаться на бесплатный разбор
-                                </button>
-                            </div>
-                            
-                            <p class="text-center text-[11px] sm:text-xs text-gray-500 mt-4 leading-relaxed max-w-md mx-auto">
-                                нажимая кнопку, вы соглашаетесь с политикой конфиденциальности. никакого спама.
-                            </p>
-                            
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Правая колонка: Контакты -->
-                <div class="flex flex-col h-full justify-center lg:pl-6 mt-8 lg:mt-0">
-                    <div class="text-center lg:text-left mb-6 lg:mb-8">
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                            Остались вопросы?
-                        </h2>
-                        <p class="mt-2 text-base lg:text-lg text-white/80">
-                            напишите напрямую
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-                        
-                        <!-- Telegram -->
-                        <a href="https://t.me/IrinaBiryikova" target="_blank" rel="noopener noreferrer" class="bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center transition-transform hover:-translate-y-1 hover:shadow-lg group">
-                            <div class="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-full bg-orange-50 text-[#E8501A] mb-4 group-hover:scale-110 transition-transform">
-                                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.98 1.25-5.58 3.68-.52.36-1 .54-1.42.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.29-.48.79-.74 3.08-1.34 5.14-2.23 6.17-2.66 2.95-1.23 3.56-1.45 3.96-1.46.09 0 .28.02.39.11.09.08.12.18.13.26 0 .04.01.12 0 .19z"/></svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#E8501A] transition-colors">telegram</h3>
-                            <p class="text-sm text-gray-500 mt-1">@IrinaBiryikova</p>
-                        </a>
-
-                        <!-- Email -->
-                        <a href="mailto:irina550894@gmail.com" class="bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center transition-transform hover:-translate-y-1 hover:shadow-lg group">
-                            <div class="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-full bg-orange-50 text-[#E8501A] mb-4 group-hover:scale-110 transition-transform">
-                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#E8501A] transition-colors">email</h3>
-                            <p class="text-[13px] lg:text-sm text-gray-500 mt-1 font-medium lowercase break-all sm:break-normal">irina550894@gmail.com</p>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Подвал -->
-            <div class="mt-12 lg:mt-20 pt-6 border-t border-white/20 text-center flex flex-col items-center">
-                <p class="text-xs text-white/70 mb-2">© 2026 Ирина Бирюкова. финансовый директор на аутсорсе.</p>
-                <a href="#" class="text-[11px] text-white/70 hover:text-white transition-colors">политика конфиденциальности</a>
-            </div>
-
-        </div>
-    </section>
     <script src="./assets/js/main.js"></script>
-
 </body>
 </html>
-

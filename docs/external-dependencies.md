@@ -1,6 +1,8 @@
 # External dependencies
 
-Current dependencies found in the source `index.html`.
+Current status after Stage 2: the active `index.html` no longer references Tailwind CDN, Google Fonts, Yapx, or Kinescope.
+
+This file keeps the previous dependency inventory for traceability.
 
 ## Runtime and styles
 
@@ -26,7 +28,6 @@ Local replacements prepared during Stage 1:
 
 ## Notes for later stages
 
-- Replace external media references with local assets during the media integration stage.
-- Decide whether to keep Google Fonts or self-host fonts before production deployment.
-- Replace Tailwind CDN with a local production stylesheet before final deployment.
-
+- External media references were replaced in the Stage 2 visual prototype.
+- Tailwind CDN was removed in the Stage 2 visual prototype.
+- Google Fonts were removed in the Stage 2 visual prototype; the page currently uses system UI fonts.
