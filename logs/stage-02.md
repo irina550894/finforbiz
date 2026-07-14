@@ -54,6 +54,8 @@ Stage 2 covers the first visual redesign pass. The goal is to make the site insp
 - Further tightened desktop spacing for 15-inch monitor visibility.
 - Added the "Отрасль бизнеса" field to the contact form.
 - Reworked mobile typography, dashboard layout, buttons, form fields, and card spacing for better readability.
+- Added critical inline CSS to `index.html` so the mobile page remains readable even when opened as a single `content://` file from Telegram and the external CSS file is not loaded.
+- Added image load fallbacks to hide broken local image placeholders when the HTML is opened without its `assets/` folder.
 
 ## Important notes
 
