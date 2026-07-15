@@ -18,7 +18,8 @@ This file keeps the previous dependency inventory for traceability.
 
 Local replacements prepared during Stage 1:
 
-- `assets/images/irina-biryukova.png`
+- `assets/images/irina-biryukova.jpg`
+- `assets/images/irina-biryukova.png` retained as the source image
 - `assets/video/sistema-otchetov-biznesa.mp4`
 
 ## Contacts
@@ -29,5 +30,6 @@ Local replacements prepared during Stage 1:
 ## Notes for later stages
 
 - External media references were replaced in the Stage 2 visual prototype.
+- Stage 9 switched the site to the optimized local JPEG portrait for faster loading.
 - Tailwind CDN was removed in the Stage 2 visual prototype.
 - Google Fonts were removed in the Stage 2 visual prototype; the page currently uses system UI fonts.
