@@ -56,6 +56,18 @@ Stage 2 covers the first visual redesign pass. The goal is to make the site insp
 - Reworked mobile typography, dashboard layout, buttons, form fields, and card spacing for better readability.
 - Added critical inline CSS to `index.html` so the mobile page remains readable even when opened as a single `content://` file from Telegram and the external CSS file is not loaded.
 - Added image load fallbacks to hide broken local image placeholders when the HTML is opened without its `assets/` folder.
+- Added portfolio gallery behavior for the existing portfolio section.
+- Copied portfolio images to server-safe paths:
+  - `assets/images/portfolio/financial-model-1.jpg`
+  - `assets/images/portfolio/financial-model-2.jpg`
+  - `assets/images/portfolio/financial-model-3.jpg`
+  - `assets/images/portfolio/financial-model-4.jpg`
+  - `assets/images/portfolio/calculator-kpi.jpg`
+  - `assets/images/portfolio/calculator-taxes-1.jpg`
+  - `assets/images/portfolio/calculator-taxes-2.jpg`
+- Made only "Калькуляторы" and "Модели" interactive in the portfolio section.
+- Kept "Отчеты" and "Автоматизация" as non-clickable placeholders until real materials are added.
+- Added a fullscreen darkened modal gallery with close button, previous/next controls, counter, keyboard navigation, and pointer swipe support.
 
 ## Important notes
 

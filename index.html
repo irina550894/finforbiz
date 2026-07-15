@@ -400,30 +400,32 @@
                 <h2>Инструменты, которые помогают управлять бизнесом</h2>
             </div>
             <div class="portfolio-grid">
-                <article class="portfolio-card wide">
+                <article class="portfolio-card wide portfolio-placeholder">
                     <span>Отчеты</span>
                     <h3>P&L, ДДС, баланс</h3>
-                    <p>Система регулярной отчетности, которая показывает прибыль, деньги и устойчивость бизнеса.</p>
+                    <p>Примеры отчетов будут добавлены позже. В этом блоке появятся P&L, ДДС, баланс и регулярная управленческая отчетность.</p>
                     <div class="mini-table" aria-hidden="true">
                         <span>Выручка</span><strong>12,4 млн ₽</strong>
                         <span>Маржа</span><strong>34%</strong>
                         <span>Свободные деньги</span><strong>2,1 млн ₽</strong>
                     </div>
                 </article>
-                <article class="portfolio-card gradient">
+                <button class="portfolio-card gradient portfolio-action" type="button" data-gallery="calculators">
                     <span>Калькуляторы</span>
-                    <h3>Маржинальность и дивиденды</h3>
-                    <p>Расчеты, которые помогают понимать, сколько можно безопасно выводить из бизнеса.</p>
-                </article>
-                <article class="portfolio-card">
+                    <h3>KPI и налоги</h3>
+                    <p>Калькуляторы для расчета KPI, налоговой нагрузки и управленческих показателей.</p>
+                    <strong>Смотреть примеры</strong>
+                </button>
+                <button class="portfolio-card portfolio-action" type="button" data-gallery="models">
                     <span>Модели</span>
                     <h3>Финансовые сценарии</h3>
-                    <p>Прогнозы роста, кредитной нагрузки, окупаемости и денежных потоков.</p>
-                </article>
-                <article class="portfolio-card">
+                    <p>Прогнозы роста, прибыли, денежных потоков и сценариев развития бизнеса.</p>
+                    <strong>Смотреть примеры</strong>
+                </button>
+                <article class="portfolio-card portfolio-placeholder">
                     <span>Автоматизация</span>
                     <h3>Сервисы под задачи</h3>
-                    <p>Индивидуальные инструменты для регулярных отчетов, контроля платежей и сбора данных.</p>
+                    <p>Примеры автоматизации будут добавлены позже. Здесь появятся сервисы для отчетов, контроля платежей и сбора данных.</p>
                 </article>
             </div>
         </section>
@@ -571,6 +573,30 @@
             </form>
         </section>
     </main>
+
+    <div class="portfolio-modal" id="portfolio-modal" aria-hidden="true">
+        <div class="portfolio-modal__backdrop" data-gallery-close></div>
+        <section class="portfolio-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="portfolio-modal-title">
+            <header class="portfolio-modal__header">
+                <div>
+                    <p class="eyebrow">Портфолио</p>
+                    <h2 id="portfolio-modal-title">Галерея</h2>
+                </div>
+                <button class="portfolio-modal__close" type="button" data-gallery-close aria-label="Закрыть галерею">×</button>
+            </header>
+            <div class="portfolio-modal__body">
+                <button class="portfolio-modal__nav portfolio-modal__nav--prev" type="button" data-gallery-prev aria-label="Предыдущее изображение">‹</button>
+                <figure class="portfolio-modal__figure">
+                    <img id="portfolio-modal-image" src="" alt="">
+                    <figcaption>
+                        <strong id="portfolio-modal-caption">Изображение</strong>
+                        <span id="portfolio-modal-counter">1 / 1</span>
+                    </figcaption>
+                </figure>
+                <button class="portfolio-modal__nav portfolio-modal__nav--next" type="button" data-gallery-next aria-label="Следующее изображение">›</button>
+            </div>
+        </section>
+    </div>
 
     <footer class="site-footer">
         <span>© 2026 Ирина Бирюкова. Финансовый директор на аутсорсе.</span>
