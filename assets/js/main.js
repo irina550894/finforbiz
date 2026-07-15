@@ -1,4 +1,53 @@
 const defaultPortfolioGalleries = {
+    reports: {
+        title: "Отчеты",
+        items: [
+            {
+                src: "./assets/images/portfolio/dashboard-report-01.jpg",
+                caption: "Дашборд: отчет 1"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-02.jpg",
+                caption: "Дашборд: отчет 2"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-03.jpg",
+                caption: "Дашборд: отчет 3"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-04.jpg",
+                caption: "Дашборд: отчет 4"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-05.jpg",
+                caption: "Дашборд: отчет 5"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-06.jpg",
+                caption: "Дашборд: отчет 6"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-07.jpg",
+                caption: "Дашборд: отчет 7"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-08.jpg",
+                caption: "Дашборд: отчет 8"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-09.jpg",
+                caption: "Дашборд: отчет 9"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-10.jpg",
+                caption: "Дашборд: отчет 10"
+            },
+            {
+                src: "./assets/images/portfolio/dashboard-report-11.jpg",
+                caption: "Дашборд: отчет 11"
+            }
+        ]
+    },
     calculators: {
         title: "Калькуляторы",
         items: [
@@ -126,7 +175,7 @@ function renderPortfolio(portfolioItems) {
             };
 
             return `
-                <button class="portfolio-card${themeClass} portfolio-action" type="button" data-gallery="${escapeHtml(item.id)}">
+                <button class="portfolio-card${themeClass}${wideClass} portfolio-action" type="button" data-gallery="${escapeHtml(item.id)}">
                     <span>${escapeHtml(item.label)}</span>
                     <h3>${escapeHtml(item.title)}</h3>
                     <p>${escapeHtml(item.description)}</p>

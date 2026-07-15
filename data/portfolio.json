@@ -1,15 +1,58 @@
 [
   {
     "id": "reports",
-    "type": "placeholder",
+    "type": "gallery",
     "label": "Отчеты",
-    "title": "P&L, ДДС, баланс",
-    "description": "Примеры отчетов будут добавлены позже. В этом блоке появятся P&L, ДДС, баланс и регулярная управленческая отчетность.",
+    "title": "Дашборды и управленческие отчеты",
+    "description": "Примеры отчетов, которые помогают видеть выручку, прибыль, cash flow, обязательства и ключевые показатели бизнеса.",
     "wide": true,
-    "metrics": [
-      { "label": "Выручка", "value": "12,4 млн ₽" },
-      { "label": "Маржа", "value": "34%" },
-      { "label": "Свободные деньги", "value": "2,1 млн ₽" }
+    "actionLabel": "Смотреть примеры",
+    "galleryTitle": "Дашборды и отчеты",
+    "images": [
+      {
+        "src": "./assets/images/portfolio/dashboard-report-01.jpg",
+        "caption": "Дашборд: отчет 1"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-02.jpg",
+        "caption": "Дашборд: отчет 2"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-03.jpg",
+        "caption": "Дашборд: отчет 3"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-04.jpg",
+        "caption": "Дашборд: отчет 4"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-05.jpg",
+        "caption": "Дашборд: отчет 5"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-06.jpg",
+        "caption": "Дашборд: отчет 6"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-07.jpg",
+        "caption": "Дашборд: отчет 7"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-08.jpg",
+        "caption": "Дашборд: отчет 8"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-09.jpg",
+        "caption": "Дашборд: отчет 9"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-10.jpg",
+        "caption": "Дашборд: отчет 10"
+      },
+      {
+        "src": "./assets/images/portfolio/dashboard-report-11.jpg",
+        "caption": "Дашборд: отчет 11"
+      }
     ]
   },
   {

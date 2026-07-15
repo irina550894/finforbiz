@@ -8,6 +8,17 @@ Current status after Stage 9: site media is served from local project files and 
 | --- | --- | ---: |
 | `assets/images/irina-biryukova.jpg` | Main portrait in hero and about sections | 202 KB |
 | `assets/images/irina-biryukova.png` | Source portrait, not referenced by the page | 2.15 MB |
+| `assets/images/portfolio/dashboard-report-01.jpg` | Portfolio gallery: reports | 173.7 KB |
+| `assets/images/portfolio/dashboard-report-02.jpg` | Portfolio gallery: reports | 142.8 KB |
+| `assets/images/portfolio/dashboard-report-03.jpg` | Portfolio gallery: reports | 125.9 KB |
+| `assets/images/portfolio/dashboard-report-04.jpg` | Portfolio gallery: reports | 180.2 KB |
+| `assets/images/portfolio/dashboard-report-05.jpg` | Portfolio gallery: reports | 138.1 KB |
+| `assets/images/portfolio/dashboard-report-06.jpg` | Portfolio gallery: reports | 176 KB |
+| `assets/images/portfolio/dashboard-report-07.jpg` | Portfolio gallery: reports | 148.7 KB |
+| `assets/images/portfolio/dashboard-report-08.jpg` | Portfolio gallery: reports | 92.8 KB |
+| `assets/images/portfolio/dashboard-report-09.jpg` | Portfolio gallery: reports | 178.2 KB |
+| `assets/images/portfolio/dashboard-report-10.jpg` | Portfolio gallery: reports | 144.5 KB |
+| `assets/images/portfolio/dashboard-report-11.jpg` | Portfolio gallery: reports | 174.5 KB |
 | `assets/images/portfolio/calculator-kpi.jpg` | Portfolio gallery: calculators | 125.5 KB |
 | `assets/images/portfolio/calculator-taxes-1.jpg` | Portfolio gallery: calculators | 131.8 KB |
 | `assets/images/portfolio/calculator-taxes-2.jpg` | Portfolio gallery: calculators | 133.5 KB |

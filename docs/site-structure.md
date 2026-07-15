@@ -11,7 +11,7 @@ Current one-page structure for `index.html`.
 5. About section.
 6. Collaboration formats.
 7. Workflow: four steps from diagnosis to growth strategy.
-8. Portfolio: reports placeholder, calculators gallery, models gallery, automation placeholder.
+8. Portfolio: reports gallery, calculators gallery, models gallery, automation placeholder.
 9. Cases and reviews: swipeable carousels.
 10. FAQ.
 11. Contact block and visual form.
