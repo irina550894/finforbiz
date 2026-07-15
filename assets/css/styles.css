@@ -1103,6 +1103,17 @@ h3 {
     font-weight: 800;
 }
 
+.form-note.is-error {
+    color: #a33b3b;
+    font-weight: 800;
+}
+
+.contact-form button:disabled {
+    cursor: wait;
+    opacity: 0.68;
+    transform: none;
+}
+
 .site-footer {
     width: min(1180px, calc(100% - 32px));
     margin: 0 auto 28px;

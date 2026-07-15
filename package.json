@@ -1,0 +1,12 @@
+{
+  "name": "finforbiz-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site with contact form backend for finforbiz.pro",
+  "scripts": {
+    "start": "node server/contact-server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

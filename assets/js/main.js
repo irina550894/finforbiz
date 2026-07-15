@@ -317,10 +317,53 @@ function initContactForm() {
     const formNote = document.querySelector("#form-note");
 
     if (contactForm && formNote) {
-        contactForm.addEventListener("submit", (event) => {
+        contactForm.addEventListener("submit", async (event) => {
             event.preventDefault();
-            formNote.textContent = "Visual prototype is ready. Real email and Telegram delivery will be connected during the backend stage.";
-            formNote.classList.add("is-success");
+            const submitButton = contactForm.querySelector("button[type=\"submit\"]");
+            const formData = new FormData(contactForm);
+            const payload = {
+                name: String(formData.get("name") || "").trim(),
+                phone: String(formData.get("phone") || "").trim(),
+                email: String(formData.get("email") || "").trim(),
+                industry: String(formData.get("industry") || "").trim(),
+                revenue: String(formData.get("revenue") || "").trim(),
+                consent: formData.get("consent") === "on"
+            };
+
+            formNote.classList.remove("is-success", "is-error");
+
+            if (!payload.name || !payload.phone || !payload.email || !payload.consent) {
+                formNote.textContent = "Заполните имя, телефон, email и подтвердите согласие.";
+                formNote.classList.add("is-error");
+                return;
+            }
+
+            submitButton.disabled = true;
+            formNote.textContent = "Отправляем заявку...";
+
+            try {
+                const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json().catch(() => ({}));
+
+                if (!response.ok || !result.ok) {
+                    throw new Error(result.message || "Не удалось отправить заявку.");
+                }
+
+                contactForm.reset();
+                formNote.textContent = "Заявка отправлена. Я свяжусь с вами в ближайшее время.";
+                formNote.classList.add("is-success");
+            } catch (error) {
+                formNote.textContent = "Не удалось отправить заявку. Напишите напрямую в Telegram или на email.";
+                formNote.classList.add("is-error");
+            } finally {
+                submitButton.disabled = false;
+            }
         });
     }
 }
