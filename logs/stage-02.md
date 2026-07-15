@@ -68,6 +68,10 @@ Stage 2 covers the first visual redesign pass. The goal is to make the site insp
 - Made only "Калькуляторы" and "Модели" interactive in the portfolio section.
 - Kept "Отчеты" and "Автоматизация" as non-clickable placeholders until real materials are added.
 - Added a fullscreen darkened modal gallery with close button, previous/next controls, counter, keyboard navigation, and pointer swipe support.
+- Removed the three lower statistic cards from the first screen.
+- Moved the first-screen CTA buttons lower to add more breathing room.
+- Narrowed the "Платежный календарь" card by roughly one third on desktop, with full-width fallback on mobile.
+- Updated the "Обо мне" text with the new 20+ years, education, financing, profit growth, and budgeting wording.
 
 ## Important notes
 

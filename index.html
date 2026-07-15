@@ -84,7 +84,7 @@
         h2 { margin-bottom: 16px; font-size: clamp(30px, 3.6vw, 50px); line-height: 1; letter-spacing: -0.025em; }
         h3 { margin-bottom: 10px; font-size: 22px; line-height: 1.12; }
         .lead { max-width: 620px; color: var(--muted); font-size: 17px; }
-        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 44px 0 0; }
         .hero-stats, .metric-grid, .dashboard-bottom, .problem-grid, .pricing-grid, .workflow-grid, .portfolio-grid, .carousel-layout, .contacts { display: grid; gap: 14px; }
         .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         .hero-stats div, .metric-card, .soft-card, .price-card, .workflow-card, .portfolio-card, .case-card, .faq-item, .contact-form, .contact-copy {
@@ -107,7 +107,7 @@
         .dashboard-topline img:hover { transform: scale(1.08); }
         .metric-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         .metric-card strong { display: block; margin-bottom: 6px; font-size: 28px; line-height: 1; }
-        .finance-route { min-height: 130px; padding: 18px 22px; border-radius: 26px; background: linear-gradient(135deg, #fffdf8, #f8dfef 48%, var(--lilac)); }
+        .finance-route { width: 66%; justify-self: end; min-height: 130px; padding: 18px 22px; border-radius: 26px; background: linear-gradient(135deg, #fffdf8, #f8dfef 48%, var(--lilac)); }
         .video-frame { width: min(760px, 100%); margin: 0 auto; overflow: hidden; border: 8px solid var(--surface); border-radius: 30px; background: var(--deep); box-shadow: 0 24px 70px rgba(43, 31, 69, 0.16); }
         .video-frame video { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 
@@ -125,13 +125,14 @@
             h3 { font-size: 19px; }
             .lead { font-size: 16px; }
             .hero-actions, .hero-stats, .metric-grid, .dashboard-bottom, .problem-grid, .pricing-grid, .workflow-grid, .portfolio-grid, .carousel-layout, .contacts, .contact-form { display: grid; grid-template-columns: 1fr; }
+            .hero-actions { margin-top: 28px; }
             .btn { width: 100%; min-height: 44px; padding-inline: 14px; text-align: center; }
             .dashboard-hero { display: grid; grid-template-columns: 1fr; min-height: auto; padding: 12px; border-radius: 26px; }
             .dashboard-sidebar { display: none; }
             .dashboard-topline { align-items: flex-start; padding: 15px; }
             .dashboard-topline strong { font-size: 20px; }
             .dashboard-topline img { width: 74px; height: 74px; border-radius: 18px; }
-            .metric-card, .finance-route, .workflow-card, .portfolio-card, .case-card, .price-card { min-height: auto; }
+            .metric-card, .finance-route, .workflow-card, .portfolio-card, .case-card, .price-card { width: 100%; min-height: auto; }
             .video-frame { width: 100%; border-width: 6px; border-radius: 24px; }
             .contact-form input, .contact-form select { width: 100%; min-height: 48px; }
         }
@@ -171,20 +172,6 @@
                     <a class="btn btn-primary" href="#contacts">Записаться на бесплатный разбор</a>
                     <a class="btn btn-secondary" href="#portfolio">Смотреть портфолио</a>
                 </div>
-                <dl class="hero-stats" aria-label="Ключевые показатели опыта">
-                    <div>
-                        <dt>25+ лет</dt>
-                        <dd>в финансах реального бизнеса</dd>
-                    </div>
-                    <div>
-                        <dt>2,5 млрд ₽</dt>
-                        <dd>опыт компаний по выручке</dd>
-                    </div>
-                    <div>
-                        <dt>10+ чел.</dt>
-                        <dd>финансовые команды в управлении</dd>
-                    </div>
-                </dl>
             </div>
 
             <div class="dashboard-hero" aria-label="Визуальная финансовая панель">
@@ -299,7 +286,10 @@
                     <p class="eyebrow">Обо мне</p>
                     <h2>Я помогаю собственнику управлять деньгами, а не реагировать на проблемы</h2>
                     <p>
-                        Меня зовут Ирина Бирюкова. Более 25 лет работаю в финансах: управленческий учет, бюджетирование, финансовые модели, контроль cash flow и поддержка собственников.
+                        Меня зовут Ирина Бирюкова. Более 20 лет работаю в финансах: управленческий учет, бюджетирование, финансовые модели, контроль cash flow и поддержка собственников.
+                    </p>
+                    <p>
+                        Высшее образование - экономист. Привлекла более +2 млрд.руб. кредитного финансирования, увеличила +8% чистую прибыль строительной компании, внедрила бюджетирование группы компаний с нуля.
                     </p>
                     <p>
                         Специализируюсь на строительных, инжиниринговых, торговых и сервисных компаниях малого и среднего бизнеса. Ценю конкретику, прозрачность и результат, который можно измерить в деньгах.

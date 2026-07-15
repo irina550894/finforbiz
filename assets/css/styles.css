@@ -228,7 +228,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin: 24px 0;
+    margin: 44px 0 0;
 }
 
 .hero-stats {
@@ -402,6 +402,8 @@ h3 {
 }
 
 .finance-route {
+    width: 66%;
+    justify-self: end;
     min-height: 130px;
     padding: 18px 22px;
     border-radius: 26px;
@@ -1210,7 +1212,7 @@ h3 {
 
     .hero-actions {
         display: grid;
-        margin: 20px 0;
+        margin: 28px 0 0;
     }
 
     .btn {
@@ -1279,6 +1281,7 @@ h3 {
     .portfolio-card,
     .case-card,
     .price-card {
+        width: 100%;
         min-height: auto;
     }
 
