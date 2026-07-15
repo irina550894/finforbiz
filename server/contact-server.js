@@ -62,6 +62,8 @@ const contentTypes = {
     ".ico": "image/x-icon"
 };
 
+const cacheableExtensions = new Set([".css", ".js", ".jpg", ".jpeg", ".png", ".webp", ".svg", ".ico", ".mp4"]);
+
 function sendJson(res, statusCode, payload) {
     const body = JSON.stringify(payload);
     res.writeHead(statusCode, {
@@ -377,10 +379,50 @@ function serveStatic(req, res) {
         }
 
         const ext = path.extname(filePath).toLowerCase();
-        res.writeHead(200, {
+        const headers = {
             "Content-Type": contentTypes[ext] || "application/octet-stream",
-            "Content-Length": stats.size
-        });
+            "Accept-Ranges": "bytes"
+        };
+
+        if (cacheableExtensions.has(ext)) {
+            headers["Cache-Control"] = "public, max-age=2592000";
+        }
+
+        const range = req.headers.range;
+        if (range && ext === ".mp4") {
+            const match = /^bytes=(\d*)-(\d*)$/.exec(range);
+            if (!match) {
+                res.writeHead(416, { "Content-Range": `bytes */${stats.size}` });
+                res.end();
+                return;
+            }
+
+            const start = match[1] ? Number(match[1]) : 0;
+            const end = match[2] ? Number(match[2]) : stats.size - 1;
+
+            if (start >= stats.size || end >= stats.size || start > end) {
+                res.writeHead(416, { "Content-Range": `bytes */${stats.size}` });
+                res.end();
+                return;
+            }
+
+            headers["Content-Length"] = end - start + 1;
+            headers["Content-Range"] = `bytes ${start}-${end}/${stats.size}`;
+            res.writeHead(206, headers);
+            if (req.method === "HEAD") {
+                res.end();
+                return;
+            }
+            fs.createReadStream(filePath, { start, end }).pipe(res);
+            return;
+        }
+
+        headers["Content-Length"] = stats.size;
+        res.writeHead(200, headers);
+        if (req.method === "HEAD") {
+            res.end();
+            return;
+        }
         fs.createReadStream(filePath).pipe(res);
     });
 }
