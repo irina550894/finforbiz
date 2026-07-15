@@ -39,6 +39,10 @@ Stage 10 covers Ubuntu server preparation for Nginx, the Node.js backend service
   - server is reachable on port `22`;
   - authentication failed with `Permission denied (publickey)`;
   - the available local SSH key is not accepted for user `irina`.
+- Rechecked again with verbose SSH output:
+  - local client offered `C:\Users\User\.ssh\id_ed25519`;
+  - offered public key fingerprint: `SHA256:HhWqbS7XgujZgw0pihmzvyR4gQjuzZm6cg3zFaG+Fy0`;
+  - server rejected that key for user `irina`.
 
 ## Blockers for actual server changes
 
