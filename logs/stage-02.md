@@ -72,6 +72,7 @@ Stage 2 covers the first visual redesign pass. The goal is to make the site insp
 - Moved the first-screen CTA buttons lower to add more breathing room.
 - Narrowed the "Платежный календарь" card by roughly one third on desktop, with full-width fallback on mobile.
 - Updated the "Обо мне" text with the new 20+ years, education, financing, profit growth, and budgeting wording.
+- Raised only the first-screen eyebrow and main headline on desktop to visually align them with the dashboard sidebar buttons "Панель" and "Форматы"; other first-screen elements were left in place.
 
 ## Important notes
 

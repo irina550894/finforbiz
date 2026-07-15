@@ -563,6 +563,18 @@ h3 {
     object-fit: cover;
 }
 
+@media (min-width: 761px) {
+    .hero-copy .eyebrow {
+        position: relative;
+        top: -58px;
+    }
+
+    .hero-copy h1 {
+        position: relative;
+        top: -48px;
+    }
+}
+
 .profile-card {
     display: grid;
     grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);

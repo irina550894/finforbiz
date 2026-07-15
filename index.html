@@ -111,6 +111,11 @@
         .video-frame { width: min(760px, 100%); margin: 0 auto; overflow: hidden; border: 8px solid var(--surface); border-radius: 30px; background: var(--deep); box-shadow: 0 24px 70px rgba(43, 31, 69, 0.16); }
         .video-frame video { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 
+        @media (min-width: 761px) {
+            .hero-copy .eyebrow { position: relative; top: -58px; }
+            .hero-copy h1 { position: relative; top: -48px; }
+        }
+
         @media (max-width: 760px) {
             body { font-size: 15px; line-height: 1.45; }
             .site-header { width: min(100% - 20px, 1180px); align-items: center; padding: 8px; border-radius: 24px; }
