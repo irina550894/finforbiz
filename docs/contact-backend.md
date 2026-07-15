@@ -54,17 +54,17 @@ Copy `.env.example` to `.env` on the server and fill:
 PORT=3000
 SITE_ROOT=.
 
-CONTACT_RECIPIENT_EMAIL=irina550894@mail.com
+CONTACT_RECIPIENT_EMAIL=irina550894@gmail.com
 
 TELEGRAM_BOT_TOKEN=
 TELEGRAM_CHAT_ID=
 
-SMTP_HOST=
+SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_SECURE=false
-SMTP_USER=
+SMTP_USER=irina550894@gmail.com
 SMTP_PASS=
-SMTP_FROM=
+SMTP_FROM=irina550894@gmail.com
 ```
 
 ## Telegram setup
@@ -80,22 +80,22 @@ The site cannot send messages directly to a personal `@username`; Telegram requi
 
 ## SMTP setup
 
-SMTP access for `irina550894@mail.com` still needs to be checked with the mailbox password or app password.
+SMTP access for `irina550894@gmail.com` still needs to be checked with a Gmail app password.
 
-Official mail.com server settings:
+Official Gmail SMTP server settings:
 
-- SMTP server: `smtp.mail.com`
-- port `587` with STARTTLS;
-- or port `465` with SSL/TLS.
+- SMTP server: `smtp.gmail.com`
+- port `587` with TLS/STARTTLS;
+- or port `465` with SSL.
 
 The project `.env` is prepared with port `587` and STARTTLS:
 
 ```text
-SMTP_HOST=smtp.mail.com
+SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_SECURE=false
-SMTP_USER=irina550894@mail.com
-SMTP_FROM=irina550894@mail.com
+SMTP_USER=irina550894@gmail.com
+SMTP_FROM=irina550894@gmail.com
 SMTP_PASS=
 ```
 
@@ -108,7 +108,7 @@ Needed values:
 - SMTP password or app password;
 - sender email.
 
-If mail.com SMTP is not available or unreliable, use another SMTP mailbox or a transactional mail service.
+For Gmail, do not use the normal mailbox password in `SMTP_PASS`. Create a Google app password and use that value.
 
 ### How to check SMTP as a beginner
 
@@ -125,7 +125,7 @@ sudo apt install -y openssl
 3. Check port `587`:
 
 ```bash
-openssl s_client -starttls smtp -connect smtp.mail.com:587 -crlf
+openssl s_client -starttls smtp -connect smtp.gmail.com:587 -crlf
 ```
 
 If the connection works, you should see certificate text and a line similar to `250` after typing:
@@ -137,7 +137,7 @@ EHLO finforbiz.pro
 4. Check port `465`:
 
 ```bash
-openssl s_client -connect smtp.mail.com:465 -crlf
+openssl s_client -connect smtp.gmail.com:465 -crlf
 ```
 
 5. If both commands hang or fail, the server or provider may block outbound SMTP ports.
@@ -145,15 +145,15 @@ openssl s_client -connect smtp.mail.com:465 -crlf
 #### Option B. Check through an email app
 
 1. Open Thunderbird, Outlook, Apple Mail, or another email app.
-2. Add the mailbox `irina550894@mail.com`.
+2. Add the mailbox `irina550894@gmail.com`.
 3. Use manual outgoing server settings:
-   - server: `smtp.mail.com`;
+   - server: `smtp.gmail.com`;
    - port: `587`;
    - encryption: `STARTTLS`;
-   - username: `irina550894@mail.com`;
-   - password: mailbox password or app password.
+   - username: `irina550894@gmail.com`;
+   - password: Gmail app password.
 4. Try sending a test email to yourself.
-5. If login fails, check whether mail.com requires Premium/IMAP-SMTP access or a special app password.
+5. If login fails, check that 2-Step Verification is enabled and that the app password was copied without spaces.
 
 #### Option C. Check after `.env` is filled
 
@@ -166,7 +166,7 @@ npm start
 
 3. Open the site through the backend and send a test form.
 4. Check:
-   - whether the email arrives at `irina550894@mail.com`;
+   - whether the email arrives at `irina550894@gmail.com`;
    - whether server logs show SMTP authentication or connection errors.
 
 ## Local run

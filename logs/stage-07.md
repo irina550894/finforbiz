@@ -48,11 +48,13 @@ Stage 7 covers the contact form backend, frontend form submission, Telegram deli
 - Telegram and SMTP require server-side environment variables.
 - Node.js is not available in the current local workspace (`where.exe node` did not find it), so runtime syntax and end-to-end backend checks must be performed on the Ubuntu server or after installing Node.js locally.
 - Created a local `.env` file for Telegram and SMTP values. It is intentionally ignored by git.
-- Checked official mail.com SMTP settings: `smtp.mail.com`, port `587` with STARTTLS or port `465` with SSL/TLS.
-- Tried TCP checks for ports `587` and `465` from this environment, but both attempts timed out. SMTP connectivity should be checked from the target Ubuntu server.
+- Corrected recipient email from `irina550894@mail.com` to `irina550894@gmail.com`.
+- Checked official Gmail SMTP settings: `smtp.gmail.com`, port `587` with TLS/STARTTLS or port `465` with SSL.
+- Checked TCP connectivity to `smtp.gmail.com` from the working environment with external network access: ports `587` and `465` are reachable.
+- Gmail SMTP requires authentication with a Google app password for this backend scenario; the normal mailbox password should not be used.
 
 ## Open questions
 
 - Telegram bot token and chat id still need to be created and configured.
-- SMTP access for `irina550894@mail.com` still needs to be checked.
+- SMTP access for `irina550894@gmail.com` still needs to be checked after `SMTP_PASS` is filled with a Gmail app password.
 - Final end-to-end delivery can only be tested after real credentials are available.

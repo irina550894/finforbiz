@@ -31,7 +31,7 @@ loadEnv(path.join(ROOT_DIR, ".env"));
 const config = {
     port: Number(process.env.PORT || 3000),
     siteRoot: path.resolve(ROOT_DIR, process.env.SITE_ROOT || "."),
-    recipientEmail: process.env.CONTACT_RECIPIENT_EMAIL || "irina550894@mail.com",
+    recipientEmail: process.env.CONTACT_RECIPIENT_EMAIL || "irina550894@gmail.com",
     telegramBotToken: process.env.TELEGRAM_BOT_TOKEN || "",
     telegramChatId: process.env.TELEGRAM_CHAT_ID || "",
     smtpHost: process.env.SMTP_HOST || "",
