@@ -1,66 +1,4 @@
-document.querySelectorAll(".faq-item button").forEach((button) => {
-    button.addEventListener("click", () => {
-        const item = button.closest(".faq-item");
-        item.classList.toggle("is-open");
-    });
-});
-
-document.querySelectorAll("[data-carousel]").forEach((viewport) => {
-    const id = viewport.dataset.carousel;
-    const track = viewport.querySelector(".carousel-track");
-    const slides = Array.from(viewport.querySelectorAll(".carousel-slide"));
-    const dotsContainer = document.querySelector(`[data-carousel-dots="${id}"]`);
-    const prevButton = document.querySelector(`[data-carousel-prev="${id}"]`);
-    const nextButton = document.querySelector(`[data-carousel-next="${id}"]`);
-    let currentIndex = 0;
-    let startX = 0;
-    let isPointerDown = false;
-
-    if (!track || slides.length === 0) return;
-
-    const dots = slides.map((_, index) => {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.setAttribute("aria-label", `Показать слайд ${index + 1}`);
-        dot.addEventListener("click", () => setSlide(index));
-        dotsContainer?.appendChild(dot);
-        return dot;
-    });
-
-    function setSlide(index) {
-        currentIndex = (index + slides.length) % slides.length;
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, dotIndex) => {
-            dot.classList.toggle("is-active", dotIndex === currentIndex);
-        });
-    }
-
-    prevButton?.addEventListener("click", () => setSlide(currentIndex - 1));
-    nextButton?.addEventListener("click", () => setSlide(currentIndex + 1));
-
-    viewport.addEventListener("pointerdown", (event) => {
-        isPointerDown = true;
-        startX = event.clientX;
-        viewport.setPointerCapture?.(event.pointerId);
-    });
-
-    viewport.addEventListener("pointerup", (event) => {
-        if (!isPointerDown) return;
-        const deltaX = event.clientX - startX;
-        isPointerDown = false;
-        if (Math.abs(deltaX) > 42) {
-            setSlide(currentIndex + (deltaX < 0 ? 1 : -1));
-        }
-    });
-
-    viewport.addEventListener("pointercancel", () => {
-        isPointerDown = false;
-    });
-
-    setSlide(0);
-});
-
-const portfolioGalleries = {
+const defaultPortfolioGalleries = {
     calculators: {
         title: "Калькуляторы",
         items: [
@@ -101,91 +39,296 @@ const portfolioGalleries = {
     }
 };
 
-const portfolioModal = document.querySelector("#portfolio-modal");
-const portfolioModalTitle = document.querySelector("#portfolio-modal-title");
-const portfolioModalImage = document.querySelector("#portfolio-modal-image");
-const portfolioModalCaption = document.querySelector("#portfolio-modal-caption");
-const portfolioModalCounter = document.querySelector("#portfolio-modal-counter");
-const portfolioPrev = document.querySelector("[data-gallery-prev]");
-const portfolioNext = document.querySelector("[data-gallery-next]");
-let activeGallery = null;
-let activeGalleryIndex = 0;
-let modalStartX = 0;
+let portfolioGalleries = { ...defaultPortfolioGalleries };
 
-function renderPortfolioModal() {
-    if (!activeGallery || !portfolioModalImage) return;
-
-    const item = activeGallery.items[activeGalleryIndex];
-    portfolioModalTitle.textContent = activeGallery.title;
-    portfolioModalImage.src = item.src;
-    portfolioModalImage.alt = item.caption;
-    portfolioModalCaption.textContent = item.caption;
-    portfolioModalCounter.textContent = `${activeGalleryIndex + 1} / ${activeGallery.items.length}`;
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
-function setPortfolioSlide(index) {
-    if (!activeGallery) return;
-    activeGalleryIndex = (index + activeGallery.items.length) % activeGallery.items.length;
-    renderPortfolioModal();
-}
-
-function openPortfolioGallery(galleryId) {
-    activeGallery = portfolioGalleries[galleryId];
-    if (!activeGallery || !portfolioModal) return;
-
-    activeGalleryIndex = 0;
-    renderPortfolioModal();
-    portfolioModal.classList.add("is-open");
-    portfolioModal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-}
-
-function closePortfolioGallery() {
-    if (!portfolioModal) return;
-
-    portfolioModal.classList.remove("is-open");
-    portfolioModal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-    activeGallery = null;
-}
-
-document.querySelectorAll("[data-gallery]").forEach((button) => {
-    button.addEventListener("click", () => openPortfolioGallery(button.dataset.gallery));
-});
-
-document.querySelectorAll("[data-gallery-close]").forEach((button) => {
-    button.addEventListener("click", closePortfolioGallery);
-});
-
-portfolioPrev?.addEventListener("click", () => setPortfolioSlide(activeGalleryIndex - 1));
-portfolioNext?.addEventListener("click", () => setPortfolioSlide(activeGalleryIndex + 1));
-
-portfolioModal?.addEventListener("pointerdown", (event) => {
-    modalStartX = event.clientX;
-});
-
-portfolioModal?.addEventListener("pointerup", (event) => {
-    if (!activeGallery) return;
-    const deltaX = event.clientX - modalStartX;
-    if (Math.abs(deltaX) > 48) {
-        setPortfolioSlide(activeGalleryIndex + (deltaX < 0 ? 1 : -1));
+async function fetchJson(path) {
+    const response = await fetch(path, { cache: "no-store" });
+    if (!response.ok) {
+        throw new Error(`Failed to load ${path}`);
     }
-});
+    return response.json();
+}
 
-document.addEventListener("keydown", (event) => {
-    if (!activeGallery) return;
-    if (event.key === "Escape") closePortfolioGallery();
-    if (event.key === "ArrowLeft") setPortfolioSlide(activeGalleryIndex - 1);
-    if (event.key === "ArrowRight") setPortfolioSlide(activeGalleryIndex + 1);
-});
+function renderServices(services) {
+    const grid = document.querySelector("[data-services-grid]");
+    if (!grid || !Array.isArray(services) || services.length === 0) return;
 
-const contactForm = document.querySelector("#contact-form");
-const formNote = document.querySelector("#form-note");
+    grid.innerHTML = services.map((service) => {
+        const cardClass = service.featured ? "price-card featured" : "price-card";
+        const buttonClass = service.ctaStyle === "primary" ? "btn btn-primary" : "btn btn-secondary";
+        const period = service.period ? ` <small>${escapeHtml(service.period)}</small>` : "";
+        const items = Array.isArray(service.items) ? service.items : [];
 
-if (contactForm && formNote) {
-    contactForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        formNote.textContent = "Visual prototype is ready. Real email and Telegram delivery will be connected during the backend stage.";
-        formNote.classList.add("is-success");
+        return `
+            <article class="${cardClass}">
+                <span class="tag">${escapeHtml(service.tag)}</span>
+                <h3>${escapeHtml(service.title)}</h3>
+                <strong class="price">${escapeHtml(service.price)}${period}</strong>
+                <ul>
+                    ${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+                </ul>
+                <a class="${buttonClass}" href="${escapeHtml(service.ctaHref || "#contacts")}">${escapeHtml(service.ctaLabel || "Обсудить")}</a>
+            </article>
+        `;
+    }).join("");
+}
+
+function renderCases(cases) {
+    const track = document.querySelector("[data-cases-track]");
+    if (!track || !Array.isArray(cases) || cases.length === 0) return;
+
+    track.innerHTML = cases.map((item) => `
+        <article class="case-card carousel-slide">
+            <span>${escapeHtml(item.category)}</span>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${escapeHtml(item.description)}</p>
+        </article>
+    `).join("");
+}
+
+function renderReviews(reviews) {
+    const track = document.querySelector("[data-reviews-track]");
+    if (!track || !Array.isArray(reviews) || reviews.length === 0) return;
+
+    track.innerHTML = reviews.map((item) => `
+        <article class="case-card review-card carousel-slide">
+            <span>${escapeHtml(item.label || "Отзыв")}</span>
+            <blockquote>"${escapeHtml(item.quote)}"</blockquote>
+            <cite>${escapeHtml(item.author)}${item.role ? `, ${escapeHtml(item.role)}` : ""}</cite>
+        </article>
+    `).join("");
+}
+
+function renderPortfolio(portfolioItems) {
+    const grid = document.querySelector("[data-portfolio-grid]");
+    if (!grid || !Array.isArray(portfolioItems) || portfolioItems.length === 0) return;
+
+    const galleries = {};
+
+    grid.innerHTML = portfolioItems.map((item) => {
+        const isGallery = item.type === "gallery" && Array.isArray(item.images) && item.images.length > 0;
+        const themeClass = item.theme === "gradient" ? " gradient" : "";
+        const wideClass = item.wide ? " wide" : "";
+
+        if (isGallery) {
+            galleries[item.id] = {
+                title: item.galleryTitle || item.title,
+                items: item.images
+            };
+
+            return `
+                <button class="portfolio-card${themeClass} portfolio-action" type="button" data-gallery="${escapeHtml(item.id)}">
+                    <span>${escapeHtml(item.label)}</span>
+                    <h3>${escapeHtml(item.title)}</h3>
+                    <p>${escapeHtml(item.description)}</p>
+                    <strong>${escapeHtml(item.actionLabel || "Смотреть примеры")}</strong>
+                </button>
+            `;
+        }
+
+        const metrics = Array.isArray(item.metrics) && item.metrics.length > 0
+            ? `<div class="mini-table" aria-hidden="true">
+                ${item.metrics.map((metric) => `<span>${escapeHtml(metric.label)}</span><strong>${escapeHtml(metric.value)}</strong>`).join("")}
+            </div>`
+            : "";
+
+        return `
+            <article class="portfolio-card${wideClass} portfolio-placeholder">
+                <span>${escapeHtml(item.label)}</span>
+                <h3>${escapeHtml(item.title)}</h3>
+                <p>${escapeHtml(item.description)}</p>
+                ${metrics}
+            </article>
+        `;
+    }).join("");
+
+    portfolioGalleries = Object.keys(galleries).length > 0 ? galleries : { ...defaultPortfolioGalleries };
+}
+
+async function hydrateContentFromJson() {
+    const loaders = [
+        fetchJson("./data/services.json").then(renderServices),
+        fetchJson("./data/cases.json").then(renderCases),
+        fetchJson("./data/reviews.json").then(renderReviews),
+        fetchJson("./data/portfolio.json").then(renderPortfolio)
+    ];
+
+    await Promise.allSettled(loaders);
+}
+
+function initFaq() {
+    document.querySelectorAll(".faq-item button").forEach((button) => {
+        button.addEventListener("click", () => {
+            const item = button.closest(".faq-item");
+            item.classList.toggle("is-open");
+        });
     });
 }
+
+function initCarousels() {
+    document.querySelectorAll("[data-carousel]").forEach((viewport) => {
+        const id = viewport.dataset.carousel;
+        const track = viewport.querySelector(".carousel-track");
+        const slides = Array.from(viewport.querySelectorAll(".carousel-slide"));
+        const dotsContainer = document.querySelector(`[data-carousel-dots="${id}"]`);
+        const prevButton = document.querySelector(`[data-carousel-prev="${id}"]`);
+        const nextButton = document.querySelector(`[data-carousel-next="${id}"]`);
+        let currentIndex = 0;
+        let startX = 0;
+        let isPointerDown = false;
+
+        if (!track || slides.length === 0) return;
+        if (dotsContainer) dotsContainer.innerHTML = "";
+
+        const dots = slides.map((_, index) => {
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.setAttribute("aria-label", `Показать слайд ${index + 1}`);
+            dot.addEventListener("click", () => setSlide(index));
+            dotsContainer?.appendChild(dot);
+            return dot;
+        });
+
+        function setSlide(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, dotIndex) => {
+                dot.classList.toggle("is-active", dotIndex === currentIndex);
+            });
+        }
+
+        prevButton?.addEventListener("click", () => setSlide(currentIndex - 1));
+        nextButton?.addEventListener("click", () => setSlide(currentIndex + 1));
+
+        viewport.addEventListener("pointerdown", (event) => {
+            isPointerDown = true;
+            startX = event.clientX;
+            viewport.setPointerCapture?.(event.pointerId);
+        });
+
+        viewport.addEventListener("pointerup", (event) => {
+            if (!isPointerDown) return;
+            const deltaX = event.clientX - startX;
+            isPointerDown = false;
+            if (Math.abs(deltaX) > 42) {
+                setSlide(currentIndex + (deltaX < 0 ? 1 : -1));
+            }
+        });
+
+        viewport.addEventListener("pointercancel", () => {
+            isPointerDown = false;
+        });
+
+        setSlide(0);
+    });
+}
+
+function initPortfolioModal() {
+    const portfolioModal = document.querySelector("#portfolio-modal");
+    const portfolioModalTitle = document.querySelector("#portfolio-modal-title");
+    const portfolioModalImage = document.querySelector("#portfolio-modal-image");
+    const portfolioModalCaption = document.querySelector("#portfolio-modal-caption");
+    const portfolioModalCounter = document.querySelector("#portfolio-modal-counter");
+    const portfolioPrev = document.querySelector("[data-gallery-prev]");
+    const portfolioNext = document.querySelector("[data-gallery-next]");
+    let activeGallery = null;
+    let activeGalleryIndex = 0;
+    let modalStartX = 0;
+
+    function renderPortfolioModal() {
+        if (!activeGallery || !portfolioModalImage) return;
+
+        const item = activeGallery.items[activeGalleryIndex];
+        portfolioModalTitle.textContent = activeGallery.title;
+        portfolioModalImage.src = item.src;
+        portfolioModalImage.alt = item.caption;
+        portfolioModalCaption.textContent = item.caption;
+        portfolioModalCounter.textContent = `${activeGalleryIndex + 1} / ${activeGallery.items.length}`;
+    }
+
+    function setPortfolioSlide(index) {
+        if (!activeGallery) return;
+        activeGalleryIndex = (index + activeGallery.items.length) % activeGallery.items.length;
+        renderPortfolioModal();
+    }
+
+    function openPortfolioGallery(galleryId) {
+        activeGallery = portfolioGalleries[galleryId];
+        if (!activeGallery || !portfolioModal) return;
+
+        activeGalleryIndex = 0;
+        renderPortfolioModal();
+        portfolioModal.classList.add("is-open");
+        portfolioModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+    }
+
+    function closePortfolioGallery() {
+        if (!portfolioModal) return;
+
+        portfolioModal.classList.remove("is-open");
+        portfolioModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+        activeGallery = null;
+    }
+
+    document.querySelectorAll("[data-gallery]").forEach((button) => {
+        button.addEventListener("click", () => openPortfolioGallery(button.dataset.gallery));
+    });
+
+    document.querySelectorAll("[data-gallery-close]").forEach((button) => {
+        button.addEventListener("click", closePortfolioGallery);
+    });
+
+    portfolioPrev?.addEventListener("click", () => setPortfolioSlide(activeGalleryIndex - 1));
+    portfolioNext?.addEventListener("click", () => setPortfolioSlide(activeGalleryIndex + 1));
+
+    portfolioModal?.addEventListener("pointerdown", (event) => {
+        modalStartX = event.clientX;
+    });
+
+    portfolioModal?.addEventListener("pointerup", (event) => {
+        if (!activeGallery) return;
+        const deltaX = event.clientX - modalStartX;
+        if (Math.abs(deltaX) > 48) {
+            setPortfolioSlide(activeGalleryIndex + (deltaX < 0 ? 1 : -1));
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (!activeGallery) return;
+        if (event.key === "Escape") closePortfolioGallery();
+        if (event.key === "ArrowLeft") setPortfolioSlide(activeGalleryIndex - 1);
+        if (event.key === "ArrowRight") setPortfolioSlide(activeGalleryIndex + 1);
+    });
+}
+
+function initContactForm() {
+    const contactForm = document.querySelector("#contact-form");
+    const formNote = document.querySelector("#form-note");
+
+    if (contactForm && formNote) {
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            formNote.textContent = "Visual prototype is ready. Real email and Telegram delivery will be connected during the backend stage.";
+            formNote.classList.add("is-success");
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await hydrateContentFromJson();
+    initFaq();
+    initCarousels();
+    initPortfolioModal();
+    initContactForm();
+});

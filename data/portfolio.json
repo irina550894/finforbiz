@@ -1,2 +1,73 @@
-[]
-
+[
+  {
+    "id": "reports",
+    "type": "placeholder",
+    "label": "Отчеты",
+    "title": "P&L, ДДС, баланс",
+    "description": "Примеры отчетов будут добавлены позже. В этом блоке появятся P&L, ДДС, баланс и регулярная управленческая отчетность.",
+    "wide": true,
+    "metrics": [
+      { "label": "Выручка", "value": "12,4 млн ₽" },
+      { "label": "Маржа", "value": "34%" },
+      { "label": "Свободные деньги", "value": "2,1 млн ₽" }
+    ]
+  },
+  {
+    "id": "calculators",
+    "type": "gallery",
+    "label": "Калькуляторы",
+    "title": "KPI и налоги",
+    "description": "Калькуляторы для расчета KPI, налоговой нагрузки и управленческих показателей.",
+    "theme": "gradient",
+    "actionLabel": "Смотреть примеры",
+    "galleryTitle": "Калькуляторы",
+    "images": [
+      {
+        "src": "./assets/images/portfolio/calculator-kpi.jpg",
+        "caption": "Калькулятор KPI"
+      },
+      {
+        "src": "./assets/images/portfolio/calculator-taxes-1.jpg",
+        "caption": "Налоговый калькулятор"
+      },
+      {
+        "src": "./assets/images/portfolio/calculator-taxes-2.jpg",
+        "caption": "Сравнение налоговой нагрузки"
+      }
+    ]
+  },
+  {
+    "id": "models",
+    "type": "gallery",
+    "label": "Модели",
+    "title": "Финансовые сценарии",
+    "description": "Прогнозы роста, прибыли, денежных потоков и сценариев развития бизнеса.",
+    "actionLabel": "Смотреть примеры",
+    "galleryTitle": "Финансовые модели",
+    "images": [
+      {
+        "src": "./assets/images/portfolio/financial-model-1.jpg",
+        "caption": "Финансовая модель: экран 1"
+      },
+      {
+        "src": "./assets/images/portfolio/financial-model-2.jpg",
+        "caption": "Финансовая модель: экран 2"
+      },
+      {
+        "src": "./assets/images/portfolio/financial-model-3.jpg",
+        "caption": "Финансовая модель: экран 3"
+      },
+      {
+        "src": "./assets/images/portfolio/financial-model-4.jpg",
+        "caption": "Финансовая модель: экран 4"
+      }
+    ]
+  },
+  {
+    "id": "automation",
+    "type": "placeholder",
+    "label": "Автоматизация",
+    "title": "Сервисы под задачи",
+    "description": "Примеры автоматизации будут добавлены позже. Здесь появятся сервисы для отчетов, контроля платежей и сбора данных."
+  }
+]
