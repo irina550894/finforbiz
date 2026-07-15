@@ -80,7 +80,24 @@ The site cannot send messages directly to a personal `@username`; Telegram requi
 
 ## SMTP setup
 
-SMTP access for `irina550894@mail.com` still needs to be checked.
+SMTP access for `irina550894@mail.com` still needs to be checked with the mailbox password or app password.
+
+Official mail.com server settings:
+
+- SMTP server: `smtp.mail.com`
+- port `587` with STARTTLS;
+- or port `465` with SSL/TLS.
+
+The project `.env` is prepared with port `587` and STARTTLS:
+
+```text
+SMTP_HOST=smtp.mail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=irina550894@mail.com
+SMTP_FROM=irina550894@mail.com
+SMTP_PASS=
+```
 
 Needed values:
 
@@ -92,6 +109,65 @@ Needed values:
 - sender email.
 
 If mail.com SMTP is not available or unreliable, use another SMTP mailbox or a transactional mail service.
+
+### How to check SMTP as a beginner
+
+#### Option A. Check from Ubuntu server
+
+1. Connect to the server via SSH.
+2. Install OpenSSL if needed:
+
+```bash
+sudo apt update
+sudo apt install -y openssl
+```
+
+3. Check port `587`:
+
+```bash
+openssl s_client -starttls smtp -connect smtp.mail.com:587 -crlf
+```
+
+If the connection works, you should see certificate text and a line similar to `250` after typing:
+
+```text
+EHLO finforbiz.pro
+```
+
+4. Check port `465`:
+
+```bash
+openssl s_client -connect smtp.mail.com:465 -crlf
+```
+
+5. If both commands hang or fail, the server or provider may block outbound SMTP ports.
+
+#### Option B. Check through an email app
+
+1. Open Thunderbird, Outlook, Apple Mail, or another email app.
+2. Add the mailbox `irina550894@mail.com`.
+3. Use manual outgoing server settings:
+   - server: `smtp.mail.com`;
+   - port: `587`;
+   - encryption: `STARTTLS`;
+   - username: `irina550894@mail.com`;
+   - password: mailbox password or app password.
+4. Try sending a test email to yourself.
+5. If login fails, check whether mail.com requires Premium/IMAP-SMTP access or a special app password.
+
+#### Option C. Check after `.env` is filled
+
+1. Fill `SMTP_PASS` in `.env`.
+2. Start the site backend:
+
+```bash
+npm start
+```
+
+3. Open the site through the backend and send a test form.
+4. Check:
+   - whether the email arrives at `irina550894@mail.com`;
+   - whether server logs show SMTP authentication or connection errors.
 
 ## Local run
 
@@ -122,4 +198,3 @@ Current backend includes:
 - simple in-memory rate limit;
 - no secrets in frontend code;
 - static path traversal protection.
-

@@ -47,6 +47,9 @@ Stage 7 covers the contact form backend, frontend form submission, Telegram deli
 - The endpoint expects JSON and returns JSON.
 - Telegram and SMTP require server-side environment variables.
 - Node.js is not available in the current local workspace (`where.exe node` did not find it), so runtime syntax and end-to-end backend checks must be performed on the Ubuntu server or after installing Node.js locally.
+- Created a local `.env` file for Telegram and SMTP values. It is intentionally ignored by git.
+- Checked official mail.com SMTP settings: `smtp.mail.com`, port `587` with STARTTLS or port `465` with SSL/TLS.
+- Tried TCP checks for ports `587` and `465` from this environment, but both attempts timed out. SMTP connectivity should be checked from the target Ubuntu server.
 
 ## Open questions
 
