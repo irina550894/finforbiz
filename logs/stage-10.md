@@ -35,10 +35,15 @@ Stage 10 covers Ubuntu server preparation for Nginx, the Node.js backend service
 - HTTPS currently fails during TLS handshake from the local environment.
 - SSH port `22` check timed out from the current environment.
 - Node.js is not installed in the local Windows environment, so backend syntax/runtime checks must be performed on the Ubuntu server after Node.js installation.
+- Rechecked SSH with external network access for `irina@83.222.26.253` using key-only mode:
+  - server is reachable on port `22`;
+  - authentication failed with `Permission denied (publickey)`;
+  - the available local SSH key is not accepted for user `irina`.
 
 ## Blockers for actual server changes
 
 - SSH login command is needed, for example `ssh root@83.222.26.253` or `ssh username@83.222.26.253`.
+- A valid SSH key must be added to `/home/irina/.ssh/authorized_keys`, or the correct private key must be made available locally.
 - If SSH uses a non-standard port, that port is needed.
 - Server-side changes were not applied yet because SSH access was not established.
 
