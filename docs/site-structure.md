@@ -16,6 +16,7 @@ Current one-page structure for `index.html`.
 10. FAQ.
 11. Contact block and visual form.
 12. Footer.
+13. Separate service page `privacy.html` for privacy policy and consent details.
 
 ## Main anchors
 
@@ -34,7 +35,6 @@ Current one-page structure for `index.html`.
 ## Notes
 
 - The main site remains one-page.
-- `privacy.html` is planned as a separate legal service page for the privacy stage.
+- `privacy.html` is implemented as a separate legal service page.
 - Portfolio galleries are already interactive for calculators and models.
-- Form submission is still visual-only and will be connected during the backend stage.
-
+- Form submission is connected to the backend and uses a required consent checkbox.

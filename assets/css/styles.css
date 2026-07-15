@@ -1127,6 +1127,83 @@ h3 {
     font-size: 13px;
 }
 
+.legal-page {
+    width: min(960px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 58px 0 42px;
+}
+
+.legal-hero {
+    margin-bottom: 24px;
+    padding: 34px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 253, 248, 0.9);
+    box-shadow: var(--shadow);
+}
+
+.legal-hero h1 {
+    max-width: 760px;
+    margin-bottom: 16px;
+    font-size: clamp(38px, 5vw, 64px);
+}
+
+.legal-hero p {
+    max-width: 760px;
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.legal-hero span {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.legal-content {
+    padding: 34px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: 0 12px 36px rgba(43, 31, 69, 0.07);
+}
+
+.legal-content h2 {
+    margin: 30px 0 12px;
+    font-size: 24px;
+    line-height: 1.15;
+}
+
+.legal-content h2:first-child {
+    margin-top: 0;
+}
+
+.legal-content p {
+    color: var(--muted);
+}
+
+.legal-content a {
+    color: var(--deep);
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.legal-note {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--lilac-2);
+}
+
+.legal-note strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.legal-note p {
+    margin-bottom: 0;
+}
+
 @media (max-width: 1080px) {
     .hero,
     .contacts,
@@ -1157,6 +1234,10 @@ h3 {
 
     .portfolio-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .legal-page {
+        padding-top: 36px;
     }
 }
 
@@ -1294,8 +1375,27 @@ h3 {
     .case-card,
     .workflow-card,
     .contact-copy,
-    .contact-form {
+    .contact-form,
+    .legal-hero,
+    .legal-content {
         padding: 20px;
+    }
+
+    .legal-page {
+        padding-top: 28px;
+    }
+
+    .legal-hero,
+    .legal-content {
+        border-radius: 22px;
+    }
+
+    .legal-hero p {
+        font-size: 16px;
+    }
+
+    .legal-content h2 {
+        font-size: 21px;
     }
 
     .metric-card,
