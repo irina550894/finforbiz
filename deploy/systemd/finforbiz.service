@@ -1,0 +1,22 @@
+[Unit]
+Description=Finforbiz contact form backend
+After=network.target
+
+[Service]
+Type=simple
+User=finforbiz
+Group=www-data
+WorkingDirectory=/var/www/finforbiz/current
+Environment=NODE_ENV=production
+EnvironmentFile=/etc/finforbiz.env
+ExecStart=/usr/bin/node server/contact-server.js
+Restart=always
+RestartSec=5
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

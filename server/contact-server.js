@@ -29,6 +29,7 @@ function loadEnv(filePath) {
 loadEnv(path.join(ROOT_DIR, ".env"));
 
 const config = {
+    host: process.env.HOST || "127.0.0.1",
     port: Number(process.env.PORT || 3000),
     siteRoot: path.resolve(ROOT_DIR, process.env.SITE_ROOT || "."),
     recipientEmail: process.env.CONTACT_RECIPIENT_EMAIL || "irina550894@gmail.com",
@@ -409,6 +410,6 @@ const server = http.createServer((req, res) => {
     res.end("Method not allowed");
 });
 
-server.listen(config.port, () => {
-    console.log(`finforbiz server listening on http://localhost:${config.port}`);
+server.listen(config.port, config.host, () => {
+    console.log(`finforbiz server listening on http://${config.host}:${config.port}`);
 });

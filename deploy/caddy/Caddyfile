@@ -1,0 +1,19 @@
+finforbiz.pro, www.finforbiz.pro {
+    root * /var/www/finforbiz/current
+    encode gzip zstd
+
+    handle /api/contact {
+        reverse_proxy 127.0.0.1:3000
+    }
+
+    handle {
+        try_files {path} {path}/ /index.html
+        file_server
+    }
+
+    header /assets/* Cache-Control "public, max-age=2592000"
+
+    log {
+        output file /var/log/caddy/finforbiz.access.log
+    }
+}
