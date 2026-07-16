@@ -49,6 +49,11 @@ Stage 10 covers Ubuntu server preparation for Nginx, the Node.js backend service
   - hostname: `zuqswxflhg`;
   - uptime at check time: up 13 days, 2:17;
   - password was not saved to project files.
+- Performed actual server preparation:
+  - installed Node.js `v18.19.1` and npm `9.2.0`;
+  - created system user `finforbiz`;
+  - created `/var/www/finforbiz/releases` and `/var/www/finforbiz/shared`;
+  - prepared the server for Caddy + systemd deployment.
 
 ## Blockers for actual server changes
 

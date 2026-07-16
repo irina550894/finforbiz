@@ -14,7 +14,7 @@ Target IP: `83.222.26.253`
 - Current HTTPS check fails during TLS handshake from the local environment.
 - SSH port `22` did not respond from the current environment. Actual SSH access still needs to be checked with the correct SSH command and credentials.
 
-Before SSL is issued, remove the extra A record `95.163.244.138` from DNS if it is not the intended server.
+Before SSL is issued, remove the extra A record `95.163.244.138` from DNS if it is not the intended server. Caddy/Let's Encrypt currently fails validation because Let's Encrypt tries to validate `finforbiz.pro` on `95.163.244.138`.
 
 The server appears to already have Caddy. During SSH setup, first check:
 
@@ -154,10 +154,9 @@ sudo systemctl reload nginx
 
 ## Alternative: keep Caddy
 
-If the server should keep Caddy instead of switching to Nginx, copy `deploy/caddy/Caddyfile` to:
+If the server should keep Caddy instead of switching to Nginx, merge the `finforbiz.pro` block from `deploy/caddy/Caddyfile` into the existing `/etc/caddy/Caddyfile`.
 
 ```bash
-sudo cp deploy/caddy/Caddyfile /etc/caddy/Caddyfile
 sudo caddy validate --config /etc/caddy/Caddyfile
 sudo systemctl reload caddy
 ```

@@ -1,4 +1,4 @@
-finforbiz.pro, www.finforbiz.pro {
+finforbiz.pro {
     root * /var/www/finforbiz/current
     encode gzip zstd
 
@@ -12,8 +12,4 @@ finforbiz.pro, www.finforbiz.pro {
     }
 
     header /assets/* Cache-Control "public, max-age=2592000"
-
-    log {
-        output file /var/log/caddy/finforbiz.access.log
-    }
 }
