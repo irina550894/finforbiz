@@ -69,3 +69,26 @@ Checks completed:
 - `finforbiz` backend service is active.
 
 Note: the local Windows resolver still showed the old `95.163.244.138` A record immediately after the change, but public HTTPS checks succeeded.
+
+## Contact form delivery check
+
+Tested public `POST https://finforbiz.pro/api/contact`.
+
+Result:
+
+- API returned `502 Delivery failed` because no delivery channel succeeded.
+- Telegram bot is valid:
+  - bot username: `@saitffb_bot`;
+  - `getUpdates` returned an empty result.
+- Telegram delivery failed with `Bad Request: chat not found`.
+- Gmail SMTP delivery failed because `SMTP_PASS` is empty and Gmail requires authentication.
+
+Required actions:
+
+- Open `@saitffb_bot` from the target Telegram account and send `/start`, then update `TELEGRAM_CHAT_ID` from `getUpdates`.
+- Add a Gmail app password to `SMTP_PASS` if email delivery is required.
+- Retest the form after at least Telegram is configured.
+
+Code update deployed:
+
+- Updated backend delivery handling so the form is considered successful when at least one configured channel succeeds; failed channels are logged.

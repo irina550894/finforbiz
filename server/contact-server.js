@@ -345,8 +345,13 @@ async function handleContact(req, res) {
         ]);
 
         const failed = results.filter((result) => result.status === "rejected");
+        const delivered = results.some((result) => result.status === "fulfilled");
+
         if (failed.length > 0) {
-            console.error("Contact delivery failed", failed.map((item) => item.reason?.message || item.reason));
+            console.error("Contact delivery issues", failed.map((item) => item.reason?.message || item.reason));
+        }
+
+        if (!delivered) {
             sendJson(res, 502, { ok: false, message: "Delivery failed" });
             return;
         }

@@ -78,6 +78,10 @@ SMTP_FROM=irina550894@gmail.com
 
 The site cannot send messages directly to a personal `@username`; Telegram requires a bot and chat id.
 
+Current bot username on the server: `@saitffb_bot`.
+
+If Telegram returns `Bad Request: chat not found`, open `@saitffb_bot` from the target Telegram account, press Start or send `/start`, then run `getUpdates` again and update `TELEGRAM_CHAT_ID`.
+
 ## SMTP setup
 
 SMTP access for `irina550894@gmail.com` still needs to be checked with a Gmail app password.
@@ -198,3 +202,4 @@ Current backend includes:
 - simple in-memory rate limit;
 - no secrets in frontend code;
 - static path traversal protection.
+- delivery is accepted when at least one configured channel succeeds; failed channels are logged server-side.
