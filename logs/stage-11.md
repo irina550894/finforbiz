@@ -92,3 +92,18 @@ Required actions:
 Code update deployed:
 
 - Updated backend delivery handling so the form is considered successful when at least one configured channel succeeds; failed channels are logged.
+
+## Telegram delivery verified
+
+After the bot was started from the target Telegram account:
+
+- `getUpdates` returned private chat `1781603163` for `@IrinaBiryikova`;
+- the server already had the same `TELEGRAM_CHAT_ID`;
+- public `POST https://finforbiz.pro/api/contact` returned `200 OK`;
+- Telegram delivery succeeded;
+- Gmail SMTP still logs authentication failure until `SMTP_PASS` is filled.
+
+Also added contact phone to the production contact block:
+
+- `+7 902 056-67-56`
+- `tel:+79020566756`

@@ -43,14 +43,14 @@ Stage 12 covers public acceptance checks after deployment.
 
 ## Remaining blockers
 
-- Telegram delivery is not complete:
+- Telegram delivery is complete:
   - bot username: `@saitffb_bot`;
-  - target Telegram account must open the bot and send `/start`;
-  - after that, `TELEGRAM_CHAT_ID` must be updated from `getUpdates`.
+  - target chat id: `1781603163`;
+  - test contact form submission returned `200 OK`.
 - Gmail SMTP delivery is not complete:
   - `SMTP_PASS` is empty;
   - Gmail requires an app password.
 
 ## Current production state
 
-The site is deployed and publicly available over HTTPS. Static media, portfolio images, local video, privacy page, and backend validation are working. Lead delivery requires Telegram chat initialization and/or Gmail SMTP app password.
+The site is deployed and publicly available over HTTPS. Static media, portfolio images, local video, privacy page, backend validation, and Telegram lead delivery are working. Email delivery still requires a Gmail SMTP app password.
