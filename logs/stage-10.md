@@ -43,6 +43,12 @@ Stage 10 covers Ubuntu server preparation for Nginx, the Node.js backend service
   - local client offered `C:\Users\User\.ssh\id_ed25519`;
   - offered public key fingerprint: `SHA256:HhWqbS7XgujZgw0pihmzvyR4gQjuzZm6cg3zFaG+Fy0`;
   - server rejected that key for user `irina`.
+- Checked SSH access as `root` on port `22` with password authentication:
+  - command: `whoami; hostname; uptime`;
+  - user: `root`;
+  - hostname: `zuqswxflhg`;
+  - uptime at check time: up 13 days, 2:17;
+  - password was not saved to project files.
 
 ## Blockers for actual server changes
 
