@@ -54,3 +54,18 @@ Caddy/Let's Encrypt validation failed with a timeout against `95.163.244.138`. T
 - Caddy was temporarily left with a valid `finforbiz.pro` HTTPS block. It will retry certificate issuance automatically after DNS is fixed.
 - I did not switch the public site to HTTP-only because that would weaken security without explicit approval.
 - SMTP email delivery still requires `SMTP_PASS` to be filled with a Gmail app password.
+
+## DNS fixed and HTTPS verified
+
+After the extra DNS record was removed by the domain owner, Caddy retried certificate issuance.
+
+Checks completed:
+
+- Caddy obtained a production Let's Encrypt certificate for `finforbiz.pro`.
+- Public `https://finforbiz.pro/` returns `200 OK`.
+- Public `https://finforbiz.pro/assets/images/irina-biryukova.jpg` returns `200 OK`.
+- Public `https://finforbiz.pro/assets/video/sistema-otchetov-biznesa.mp4` returns `206 Partial Content` for byte-range requests.
+- `caddy` is active.
+- `finforbiz` backend service is active.
+
+Note: the local Windows resolver still showed the old `95.163.244.138` A record immediately after the change, but public HTTPS checks succeeded.
