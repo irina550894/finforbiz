@@ -64,3 +64,7 @@ Updated and deployed backend delivery logic:
 - SMTP email is used only when host/from/recipient are configured and either no SMTP username is required or `SMTP_PASS` is present.
 - Public test `POST https://finforbiz.pro/api/contact` returned `200 OK`.
 - New service logs after restart did not show SMTP authentication errors for Telegram-only delivery.
+
+## Handover note
+
+Added `docs/production-handover.md` with the current production state, server paths, contact delivery rules, Gmail SMTP setup notes, basic check commands, editable data files, and the remaining acceptance item.
