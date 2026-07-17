@@ -324,6 +324,14 @@ async function sendEmail(text, contact) {
     }
 }
 
+function isTelegramConfigured() {
+    return Boolean(config.telegramBotToken && config.telegramChatId);
+}
+
+function isSmtpConfigured() {
+    return Boolean(config.smtpHost && config.smtpFrom && config.recipientEmail && (!config.smtpUser || config.smtpPass));
+}
+
 async function handleContact(req, res) {
     if (!checkRateLimit(req)) {
         sendJson(res, 429, { ok: false, message: "Too many requests" });
@@ -339,10 +347,16 @@ async function handleContact(req, res) {
         }
 
         const text = buildLeadText(contact);
-        const results = await Promise.allSettled([
-            sendTelegramMessage(text),
-            sendEmail(text, contact)
-        ]);
+        const deliveries = [];
+        if (isTelegramConfigured()) deliveries.push(sendTelegramMessage(text));
+        if (isSmtpConfigured()) deliveries.push(sendEmail(text, contact));
+
+        if (deliveries.length === 0) {
+            sendJson(res, 502, { ok: false, message: "Delivery is not configured" });
+            return;
+        }
+
+        const results = await Promise.allSettled(deliveries);
 
         const failed = results.filter((result) => result.status === "rejected");
         const delivered = results.some((result) => result.status === "fulfilled");

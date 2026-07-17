@@ -50,7 +50,17 @@ Stage 12 covers public acceptance checks after deployment.
 - Gmail SMTP delivery is not complete:
   - `SMTP_PASS` is empty;
   - Gmail requires an app password.
+- Backend now skips incomplete delivery channels, so Telegram-only delivery works without repeated SMTP errors while `SMTP_PASS` is empty.
 
 ## Current production state
 
 The site is deployed and publicly available over HTTPS. Static media, portfolio images, local video, privacy page, backend validation, and Telegram lead delivery are working. Email delivery still requires a Gmail SMTP app password.
+
+## Delivery channel cleanup
+
+Updated and deployed backend delivery logic:
+
+- Telegram is used when `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` are configured.
+- SMTP email is used only when host/from/recipient are configured and either no SMTP username is required or `SMTP_PASS` is present.
+- Public test `POST https://finforbiz.pro/api/contact` returned `200 OK`.
+- New service logs after restart did not show SMTP authentication errors for Telegram-only delivery.

@@ -203,3 +203,4 @@ Current backend includes:
 - no secrets in frontend code;
 - static path traversal protection.
 - delivery is accepted when at least one configured channel succeeds; failed channels are logged server-side.
+- delivery channels are enabled only when their required credentials are complete, so empty `SMTP_PASS` does not trigger Gmail errors on every Telegram-only lead.
