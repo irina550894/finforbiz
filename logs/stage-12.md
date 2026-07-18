@@ -47,14 +47,15 @@ Stage 12 covers public acceptance checks after deployment.
   - bot username: `@saitffb_bot`;
   - target chat id: `1781603163`;
   - test contact form submission returned `200 OK`.
-- Gmail SMTP delivery is not complete:
+- Gmail SMTP delivery is deferred by project owner as of 2026-07-18:
   - `SMTP_PASS` is empty;
-  - Gmail requires an app password.
+  - Gmail requires an app password;
+  - project continues in Telegram-only delivery mode until the app password is added.
 - Backend now skips incomplete delivery channels, so Telegram-only delivery works without repeated SMTP errors while `SMTP_PASS` is empty.
 
 ## Current production state
 
-The site is deployed and publicly available over HTTPS. Static media, portfolio images, local video, privacy page, backend validation, and Telegram lead delivery are working. Email delivery still requires a Gmail SMTP app password.
+The site is deployed and publicly available over HTTPS. Static media, portfolio images, local video, privacy page, backend validation, and Telegram lead delivery are working. Email delivery is prepared but deferred until a Gmail SMTP app password is available.
 
 ## Delivery channel cleanup
 
@@ -68,3 +69,18 @@ Updated and deployed backend delivery logic:
 ## Handover note
 
 Added `docs/production-handover.md` with the current production state, server paths, contact delivery rules, Gmail SMTP setup notes, basic check commands, editable data files, and the remaining acceptance item.
+
+## Telegram-only continuation
+
+On 2026-07-18, the project owner confirmed that work can continue without `SMTP_PASS`.
+
+Additional public checks:
+
+- `https://finforbiz.pro/`: `200`
+- `https://finforbiz.pro/privacy.html`: `200`
+- `https://finforbiz.pro/assets/css/styles.css`: `200`
+- `https://finforbiz.pro/assets/js/main.js`: `200`
+- `https://finforbiz.pro/data/portfolio.json`: `200`
+- `https://finforbiz.pro/assets/images/portfolio/dashboard-report-11.jpg`: `200`
+- `https://finforbiz.pro/assets/video/sistema-otchetov-biznesa.mp4` byte range: `206`
+- Empty `POST https://finforbiz.pro/api/contact`: `400`, expected validation error.

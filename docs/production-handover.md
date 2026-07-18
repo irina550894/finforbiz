@@ -26,7 +26,8 @@ Do not store passwords, bot tokens, SMTP app passwords, or SSH secrets in the re
 - Static files, local images, local video, portfolio data, and privacy page are served from the server.
 - Contact form validation works.
 - Telegram lead delivery works through `@saitffb_bot`.
-- Gmail delivery is prepared in the backend, but disabled until `SMTP_PASS` is added.
+- Gmail delivery is prepared in the backend, but deferred until `SMTP_PASS` is added.
+- As of 2026-07-18, the project continues in Telegram-only delivery mode by owner decision.
 
 ## Contact form delivery
 
@@ -92,6 +93,6 @@ Media files are stored locally:
 - `assets/images/portfolio/`
 - `assets/video/`
 
-## Remaining acceptance item
+## Deferred item
 
-The only unfinished infrastructure item is Gmail SMTP delivery. The site can already receive leads through Telegram.
+Gmail SMTP delivery is the only deferred infrastructure item. The site can already receive leads through Telegram.
