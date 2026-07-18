@@ -41,21 +41,21 @@ Stage 12 covers public acceptance checks after deployment.
   - Caddy listens on public `80` and `443`;
   - Node backend listens only on `127.0.0.1:3000`.
 
-## Remaining blockers
+## Delivery checks
 
 - Telegram delivery is complete:
   - bot username: `@saitffb_bot`;
   - target chat id: `1781603163`;
   - test contact form submission returned `200 OK`.
-- Gmail SMTP delivery is deferred by project owner as of 2026-07-18:
-  - `SMTP_PASS` is empty;
-  - Gmail requires an app password;
-  - project continues in Telegram-only delivery mode until the app password is added.
-- Backend now skips incomplete delivery channels, so Telegram-only delivery works without repeated SMTP errors while `SMTP_PASS` is empty.
+- Gmail SMTP delivery is complete:
+  - `SMTP_PASS` was added to `/etc/finforbiz.env` from local `.env`;
+  - backend service was restarted;
+  - public test contact form submission returned `200 OK`.
+- Backend skips incomplete delivery channels, but both Telegram and Gmail SMTP are now configured.
 
 ## Current production state
 
-The site is deployed and publicly available over HTTPS. Static media, portfolio images, local video, privacy page, backend validation, and Telegram lead delivery are working. Email delivery is prepared but deferred until a Gmail SMTP app password is available.
+The site is deployed and publicly available over HTTPS. Static media, portfolio images, local video, privacy page, backend validation, Telegram lead delivery, and Gmail SMTP delivery are working.
 
 ## Delivery channel cleanup
 
@@ -68,9 +68,9 @@ Updated and deployed backend delivery logic:
 
 ## Handover note
 
-Added `docs/production-handover.md` with the current production state, server paths, contact delivery rules, Gmail SMTP setup notes, basic check commands, editable data files, and the remaining acceptance item.
+Added `docs/production-handover.md` with the current production state, server paths, contact delivery rules, Gmail SMTP maintenance notes, basic check commands, and editable data files.
 
-## Telegram-only continuation
+## Temporary Telegram-only continuation
 
 On 2026-07-18, the project owner confirmed that work can continue without `SMTP_PASS`.
 
@@ -84,3 +84,18 @@ Additional public checks:
 - `https://finforbiz.pro/assets/images/portfolio/dashboard-report-11.jpg`: `200`
 - `https://finforbiz.pro/assets/video/sistema-otchetov-biznesa.mp4` byte range: `206`
 - Empty `POST https://finforbiz.pro/api/contact`: `400`, expected validation error.
+
+## Gmail SMTP completion
+
+On 2026-07-18, the project owner added the Gmail app password to local `.env`.
+
+Actions completed:
+
+- Read `SMTP_PASS` from local `.env` without printing the secret.
+- Updated `/etc/finforbiz.env` on the server.
+- Created server backup: `/etc/finforbiz.env.bak-20260718223546`.
+- Restarted `finforbiz.service`.
+- Confirmed service status: `active`.
+- Sent public test request to `POST https://finforbiz.pro/api/contact`.
+- Test response: `200 OK`, `{"ok":true,"message":"Request sent"}`.
+- Checked fresh `journalctl -u finforbiz` logs after the test; no SMTP errors were present.
