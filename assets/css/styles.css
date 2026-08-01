@@ -1481,16 +1481,18 @@ h3 {
 
     .portfolio-modal__body {
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(0, 1fr) auto;
-        padding: 12px 14px 18px;
+        grid-template-rows: minmax(0, 1fr);
+        padding: 12px 14px 84px;
     }
 
     .portfolio-modal__figure {
-        align-self: center;
+        align-self: stretch;
+        grid-template-rows: minmax(0, 1fr) auto;
+        width: 100%;
     }
 
     .portfolio-modal__figure img {
-        max-height: calc(100svh - 190px);
+        max-height: calc(100svh - 260px);
         border-radius: 14px;
     }
 
@@ -1498,8 +1500,20 @@ h3 {
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
-        gap: 8px;
+        gap: 10px;
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 252, 246, 0.96);
         text-align: center;
+    }
+
+    .portfolio-modal__link {
+        width: 100%;
+        max-width: 320px;
+        min-height: 48px;
+        white-space: normal;
     }
 
     .portfolio-modal__nav {
