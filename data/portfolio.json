@@ -87,6 +87,8 @@
     "description": "Прогнозы роста, прибыли, денежных потоков и сценариев развития бизнеса.",
     "actionLabel": "Смотреть примеры",
     "galleryTitle": "Финансовые модели",
+    "externalUrl": "https://finmodel.finforbiz.pro/",
+    "externalLabel": "Открыть модель",
     "images": [
       {
         "src": "./assets/images/portfolio/financial-model-1.jpg",

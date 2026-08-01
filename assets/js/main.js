@@ -67,6 +67,8 @@ const defaultPortfolioGalleries = {
     },
     models: {
         title: "Финансовые модели",
+        externalUrl: "https://finmodel.finforbiz.pro/",
+        externalLabel: "Открыть модель",
         items: [
             {
                 src: "./assets/images/portfolio/financial-model-1.jpg",
@@ -171,7 +173,9 @@ function renderPortfolio(portfolioItems) {
         if (isGallery) {
             galleries[item.id] = {
                 title: item.galleryTitle || item.title,
-                items: item.images
+                items: item.images,
+                externalUrl: item.externalUrl || "",
+                externalLabel: item.externalLabel || "Открыть"
             };
 
             return `
@@ -287,6 +291,7 @@ function initPortfolioModal() {
     const portfolioModalImage = document.querySelector("#portfolio-modal-image");
     const portfolioModalCaption = document.querySelector("#portfolio-modal-caption");
     const portfolioModalCounter = document.querySelector("#portfolio-modal-counter");
+    const portfolioModalLink = document.querySelector("#portfolio-modal-link");
     const portfolioPrev = document.querySelector("[data-gallery-prev]");
     const portfolioNext = document.querySelector("[data-gallery-next]");
     let activeGallery = null;
@@ -302,6 +307,17 @@ function initPortfolioModal() {
         portfolioModalImage.alt = item.caption;
         portfolioModalCaption.textContent = item.caption;
         portfolioModalCounter.textContent = `${activeGalleryIndex + 1} / ${activeGallery.items.length}`;
+
+        if (portfolioModalLink) {
+            if (activeGallery.externalUrl) {
+                portfolioModalLink.href = activeGallery.externalUrl;
+                portfolioModalLink.textContent = activeGallery.externalLabel || "Открыть";
+                portfolioModalLink.hidden = false;
+            } else {
+                portfolioModalLink.hidden = true;
+                portfolioModalLink.removeAttribute("href");
+            }
+        }
     }
 
     function setPortfolioSlide(index) {
