@@ -64,8 +64,6 @@
     "theme": "gradient",
     "actionLabel": "Смотреть примеры",
     "galleryTitle": "Калькуляторы",
-    "externalUrl": "https://ncalk.finforbiz.pro/",
-    "externalLabel": "Открыть калькулятор",
     "images": [
       {
         "src": "./assets/images/portfolio/calculator-kpi.jpg",
@@ -73,7 +71,9 @@
       },
       {
         "src": "./assets/images/portfolio/calculator-taxes-1.jpg",
-        "caption": "Налоговый калькулятор"
+        "caption": "Калькулятор системы налогообложения",
+        "externalUrl": "https://ncalk.finforbiz.pro/",
+        "externalLabel": "Открыть калькулятор"
       },
       {
         "src": "./assets/images/portfolio/calculator-taxes-2.jpg",
