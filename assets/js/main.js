@@ -63,7 +63,9 @@ const defaultPortfolioGalleries = {
             },
             {
                 src: "./assets/images/portfolio/calculator-taxes-2.jpg",
-                caption: "Сравнение налоговой нагрузки"
+                caption: "Сравнение налоговой нагрузки",
+                externalUrl: "https://ncalk.finforbiz.pro/",
+                externalLabel: "Открыть калькулятор"
             }
         ]
     },
