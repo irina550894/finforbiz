@@ -50,6 +50,8 @@ const defaultPortfolioGalleries = {
     },
     calculators: {
         title: "Калькуляторы",
+        externalUrl: "https://ncalk.finforbiz.pro/",
+        externalLabel: "Открыть калькулятор",
         items: [
             {
                 src: "./assets/images/portfolio/calculator-kpi.jpg",
