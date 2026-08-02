@@ -53,15 +53,21 @@ const defaultPortfolioGalleries = {
         items: [
             {
                 src: "./assets/images/portfolio/calculator-kpi.jpg",
-                caption: "Калькулятор KPI"
+                caption: "Калькулятор KPI",
+                externalUrl: "https://kpicalk.finforbiz.pro/",
+                externalLabel: "Открыть калькулятор"
             },
             {
                 src: "./assets/images/portfolio/calculator-taxes-1.jpg",
-                caption: "Налоговый калькулятор"
+                caption: "Налоговый калькулятор",
+                externalUrl: "https://ncalk.finforbiz.pro/",
+                externalLabel: "Открыть калькулятор"
             },
             {
                 src: "./assets/images/portfolio/calculator-taxes-2.jpg",
-                caption: "Сравнение налоговой нагрузки"
+                caption: "Сравнение налоговой нагрузки",
+                externalUrl: "https://ncalk.finforbiz.pro/",
+                externalLabel: "Открыть калькулятор"
             }
         ]
     },
@@ -309,9 +315,12 @@ function initPortfolioModal() {
         portfolioModalCounter.textContent = `${activeGalleryIndex + 1} / ${activeGallery.items.length}`;
 
         if (portfolioModalLink) {
-            if (activeGallery.externalUrl) {
-                portfolioModalLink.href = activeGallery.externalUrl;
-                portfolioModalLink.textContent = activeGallery.externalLabel || "Открыть";
+            const externalUrl = item.externalUrl || activeGallery.externalUrl;
+            const externalLabel = item.externalLabel || activeGallery.externalLabel || "Открыть";
+
+            if (externalUrl) {
+                portfolioModalLink.href = externalUrl;
+                portfolioModalLink.textContent = externalLabel;
                 portfolioModalLink.hidden = false;
             } else {
                 portfolioModalLink.hidden = true;

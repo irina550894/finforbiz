@@ -67,15 +67,21 @@
     "images": [
       {
         "src": "./assets/images/portfolio/calculator-kpi.jpg",
-        "caption": "Калькулятор KPI"
+        "caption": "Калькулятор KPI",
+        "externalUrl": "https://kpicalk.finforbiz.pro/",
+        "externalLabel": "Открыть калькулятор"
       },
       {
         "src": "./assets/images/portfolio/calculator-taxes-1.jpg",
-        "caption": "Налоговый калькулятор"
+        "caption": "Налоговый калькулятор",
+        "externalUrl": "https://ncalk.finforbiz.pro/",
+        "externalLabel": "Открыть калькулятор"
       },
       {
         "src": "./assets/images/portfolio/calculator-taxes-2.jpg",
-        "caption": "Сравнение налоговой нагрузки"
+        "caption": "Сравнение налоговой нагрузки",
+        "externalUrl": "https://ncalk.finforbiz.pro/",
+        "externalLabel": "Открыть калькулятор"
       }
     ]
   },
