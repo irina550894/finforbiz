@@ -57,15 +57,11 @@ const defaultPortfolioGalleries = {
             },
             {
                 src: "./assets/images/portfolio/calculator-taxes-1.jpg",
-                caption: "Калькулятор системы налогообложения",
-                externalUrl: "https://ncalk.finforbiz.pro/",
-                externalLabel: "Открыть калькулятор"
+                caption: "Налоговый калькулятор"
             },
             {
                 src: "./assets/images/portfolio/calculator-taxes-2.jpg",
-                caption: "Сравнение налоговой нагрузки",
-                externalUrl: "https://ncalk.finforbiz.pro/",
-                externalLabel: "Открыть калькулятор"
+                caption: "Сравнение налоговой нагрузки"
             }
         ]
     },
@@ -313,12 +309,9 @@ function initPortfolioModal() {
         portfolioModalCounter.textContent = `${activeGalleryIndex + 1} / ${activeGallery.items.length}`;
 
         if (portfolioModalLink) {
-            const externalUrl = item.externalUrl || activeGallery.externalUrl;
-            const externalLabel = item.externalLabel || activeGallery.externalLabel || "Открыть";
-
-            if (externalUrl) {
-                portfolioModalLink.href = externalUrl;
-                portfolioModalLink.textContent = externalLabel;
+            if (activeGallery.externalUrl) {
+                portfolioModalLink.href = activeGallery.externalUrl;
+                portfolioModalLink.textContent = activeGallery.externalLabel || "Открыть";
                 portfolioModalLink.hidden = false;
             } else {
                 portfolioModalLink.hidden = true;
