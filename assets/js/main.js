@@ -100,6 +100,11 @@ const defaultPortfolioGalleries = {
             {
                 src: "./assets/images/portfolio/service-projects.png",
                 caption: "Сервис проектов: общая сводка"
+            },
+            {
+                type: "video",
+                src: "./assets/videos/portfolio/service-projects.mp4",
+                caption: "Сервис проектов: видеообзор"
             }
         ]
     }
@@ -321,10 +326,12 @@ function initPortfolioModal() {
         const isVideo = item.type === "video" || /\.(mp4|webm|ogg)$/i.test(item.src || "");
         portfolioModalTitle.textContent = activeGallery.title;
         portfolioModalImage.hidden = isVideo;
+        portfolioModalImage.style.display = isVideo ? "none" : "";
         portfolioModalImage.src = isVideo ? "" : item.src;
         portfolioModalImage.alt = isVideo ? "" : item.caption;
         if (portfolioModalVideo) {
             portfolioModalVideo.hidden = !isVideo;
+            portfolioModalVideo.style.display = isVideo ? "" : "none";
             if (isVideo) {
                 portfolioModalVideo.src = item.src;
                 portfolioModalVideo.setAttribute("aria-label", item.caption);
