@@ -93,6 +93,20 @@ const defaultPortfolioGalleries = {
                 caption: "Финансовая модель: экран 4"
             }
         ]
+    },
+    automation: {
+        title: "Сервисы под задачи",
+        items: [
+            {
+                src: "./assets/images/portfolio/service-projects.png",
+                caption: "Сервис проектов: общая сводка"
+            },
+            {
+                type: "video",
+                src: "./assets/videos/portfolio/service-projects.mp4",
+                caption: "Сервис проектов: видеообзор"
+            }
+        ]
     }
 };
 
@@ -295,6 +309,7 @@ function initPortfolioModal() {
     const portfolioModal = document.querySelector("#portfolio-modal");
     const portfolioModalTitle = document.querySelector("#portfolio-modal-title");
     const portfolioModalImage = document.querySelector("#portfolio-modal-image");
+    const portfolioModalVideo = document.querySelector("#portfolio-modal-video");
     const portfolioModalCaption = document.querySelector("#portfolio-modal-caption");
     const portfolioModalCounter = document.querySelector("#portfolio-modal-counter");
     const portfolioModalLink = document.querySelector("#portfolio-modal-link");
@@ -308,9 +323,23 @@ function initPortfolioModal() {
         if (!activeGallery || !portfolioModalImage) return;
 
         const item = activeGallery.items[activeGalleryIndex];
+        const isVideo = item.type === "video" || /\.(mp4|webm|ogg)$/i.test(item.src || "");
         portfolioModalTitle.textContent = activeGallery.title;
-        portfolioModalImage.src = item.src;
-        portfolioModalImage.alt = item.caption;
+        portfolioModalImage.hidden = isVideo;
+        portfolioModalImage.src = isVideo ? "" : item.src;
+        portfolioModalImage.alt = isVideo ? "" : item.caption;
+        if (portfolioModalVideo) {
+            portfolioModalVideo.hidden = !isVideo;
+            if (isVideo) {
+                portfolioModalVideo.src = item.src;
+                portfolioModalVideo.setAttribute("aria-label", item.caption);
+            } else {
+                portfolioModalVideo.pause();
+                portfolioModalVideo.removeAttribute("src");
+                portfolioModalVideo.removeAttribute("aria-label");
+                portfolioModalVideo.load();
+            }
+        }
         portfolioModalCaption.textContent = item.caption;
         portfolioModalCounter.textContent = `${activeGalleryIndex + 1} / ${activeGallery.items.length}`;
 
@@ -352,6 +381,9 @@ function initPortfolioModal() {
         portfolioModal.classList.remove("is-open");
         portfolioModal.setAttribute("aria-hidden", "true");
         document.body.classList.remove("modal-open");
+        if (portfolioModalVideo) {
+            portfolioModalVideo.pause();
+        }
         activeGallery = null;
     }
 

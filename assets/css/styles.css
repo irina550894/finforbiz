@@ -816,7 +816,8 @@ h3 {
     justify-items: center;
 }
 
-.portfolio-modal__figure img {
+.portfolio-modal__figure img,
+.portfolio-modal__figure video {
     max-width: 100%;
     max-height: calc(100svh - 220px);
     object-fit: contain;
@@ -1489,7 +1490,8 @@ h3 {
         align-self: center;
     }
 
-    .portfolio-modal__figure img {
+    .portfolio-modal__figure img,
+    .portfolio-modal__figure video {
         max-height: calc(100svh - 190px);
         border-radius: 14px;
     }

@@ -116,9 +116,22 @@
   },
   {
     "id": "automation",
-    "type": "placeholder",
+    "type": "gallery",
     "label": "Автоматизация",
     "title": "Сервисы под задачи",
-    "description": "Примеры автоматизации будут добавлены позже. Здесь появятся сервисы для отчетов, контроля платежей и сбора данных."
+    "description": "Веб-сервисы для контроля проектов, бюджета, платежей, поступлений, план-факта и рисков в одной системе.",
+    "actionLabel": "Смотреть пример",
+    "galleryTitle": "Сервисы под задачи",
+    "images": [
+      {
+        "src": "./assets/images/portfolio/service-projects.png",
+        "caption": "Сервис проектов: общая сводка"
+      },
+      {
+        "type": "video",
+        "src": "./assets/videos/portfolio/service-projects.mp4",
+        "caption": "Сервис проектов: видеообзор"
+      }
+    ]
   }
 ]

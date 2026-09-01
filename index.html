@@ -142,7 +142,7 @@
             .contact-form input, .contact-form select { width: 100%; min-height: 48px; }
         }
     </style>
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260901-service-portfolio">
 </head>
 <body>
     <header class="site-header">
@@ -413,11 +413,12 @@
                     <p>Прогнозы роста, прибыли, денежных потоков и сценариев развития бизнеса.</p>
                     <strong>Смотреть примеры</strong>
                 </button>
-                <article class="portfolio-card portfolio-placeholder">
+                <button class="portfolio-card portfolio-action" type="button" data-gallery="automation">
                     <span>Автоматизация</span>
                     <h3>Сервисы под задачи</h3>
-                    <p>Примеры автоматизации будут добавлены позже. Здесь появятся сервисы для отчетов, контроля платежей и сбора данных.</p>
-                </article>
+                    <p>Веб-сервисы для контроля проектов, бюджета, платежей, поступлений, план-факта и рисков в одной системе.</p>
+                    <strong>Смотреть пример</strong>
+                </button>
             </div>
         </section>
 
@@ -580,6 +581,7 @@
                 <button class="portfolio-modal__nav portfolio-modal__nav--prev" type="button" data-gallery-prev aria-label="Предыдущее изображение">‹</button>
                 <figure class="portfolio-modal__figure">
                     <img id="portfolio-modal-image" src="" alt="">
+                    <video id="portfolio-modal-video" controls playsinline preload="metadata" hidden></video>
                     <figcaption>
                         <strong id="portfolio-modal-caption">Изображение</strong>
                         <a class="portfolio-modal__link" id="portfolio-modal-link" href="https://finmodel.finforbiz.pro/" target="_blank" rel="noopener">Открыть модель</a>
@@ -596,6 +598,6 @@
         <a href="./privacy.html">Политика конфиденциальности</a>
     </footer>
 
-    <script src="./assets/js/main.js?v=20260802-calculator-links"></script>
+    <script src="./assets/js/main.js?v=20260901-service-portfolio"></script>
 </body>
 </html>
