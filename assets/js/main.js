@@ -100,11 +100,6 @@ const defaultPortfolioGalleries = {
             {
                 src: "./assets/images/portfolio/service-projects.png",
                 caption: "Сервис проектов: общая сводка"
-            },
-            {
-                type: "video",
-                src: "./assets/videos/portfolio/service-projects.mp4",
-                caption: "Сервис проектов: видеообзор"
             }
         ]
     }
