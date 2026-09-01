@@ -158,13 +158,29 @@ function renderCases(cases) {
     const track = document.querySelector("[data-cases-track]");
     if (!track || !Array.isArray(cases) || cases.length === 0) return;
 
-    track.innerHTML = cases.map((item) => `
-        <article class="case-card carousel-slide">
-            <span>${escapeHtml(item.category)}</span>
-            <h3>${escapeHtml(item.title)}</h3>
-            <p>${escapeHtml(item.description)}</p>
-        </article>
-    `).join("");
+    track.innerHTML = cases.map((item) => {
+        const hasDetailedLayout = item.action || item.resultValue || item.ownerBenefit;
+        const body = hasDetailedLayout
+            ? `
+                ${item.action ? `<p class="case-card__detail"><strong>Что сделала:</strong> ${escapeHtml(item.action)}</p>` : ""}
+                ${item.resultValue ? `
+                    <div class="case-card__result">
+                        <strong>${escapeHtml(item.resultValue)}</strong>
+                        ${item.resultLabel ? `<span>${escapeHtml(item.resultLabel)}</span>` : ""}
+                    </div>
+                ` : ""}
+                ${item.ownerBenefit ? `<p class="case-card__detail"><strong>Для собственника:</strong> ${escapeHtml(item.ownerBenefit)}</p>` : ""}
+            `
+            : `<p>${escapeHtml(item.description)}</p>`;
+
+        return `
+            <article class="case-card carousel-slide">
+                <span>${escapeHtml(item.category)}</span>
+                <h3>${escapeHtml(item.title)}</h3>
+                ${body}
+            </article>
+        `;
+    }).join("");
 }
 
 function renderReviews(reviews) {
