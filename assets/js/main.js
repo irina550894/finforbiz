@@ -104,6 +104,7 @@ const defaultPortfolioGalleries = {
             {
                 type: "video",
                 src: "./assets/videos/portfolio/service-projects.mp4",
+                poster: "./assets/images/portfolio/service-projects.png",
                 caption: "Сервис проектов: видеообзор"
             }
         ]
@@ -334,10 +335,16 @@ function initPortfolioModal() {
             portfolioModalVideo.style.display = isVideo ? "" : "none";
             if (isVideo) {
                 portfolioModalVideo.src = item.src;
+                if (item.poster) {
+                    portfolioModalVideo.poster = item.poster;
+                } else {
+                    portfolioModalVideo.removeAttribute("poster");
+                }
                 portfolioModalVideo.setAttribute("aria-label", item.caption);
             } else {
                 portfolioModalVideo.pause();
                 portfolioModalVideo.removeAttribute("src");
+                portfolioModalVideo.removeAttribute("poster");
                 portfolioModalVideo.removeAttribute("aria-label");
                 portfolioModalVideo.load();
             }

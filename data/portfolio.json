@@ -130,6 +130,7 @@
       {
         "type": "video",
         "src": "./assets/videos/portfolio/service-projects.mp4",
+        "poster": "./assets/images/portfolio/service-projects.png",
         "caption": "Сервис проектов: видеообзор"
       }
     ]
