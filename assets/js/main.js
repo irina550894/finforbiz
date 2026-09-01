@@ -145,6 +145,7 @@ function renderServices(services) {
                 <span class="tag">${escapeHtml(service.tag)}</span>
                 <h3>${escapeHtml(service.title)}</h3>
                 <strong class="price">${escapeHtml(service.price)}${period}</strong>
+                ${service.description ? `<p class="price-card__description">${escapeHtml(service.description)}</p>` : ""}
                 <ul>
                     ${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
                 </ul>
