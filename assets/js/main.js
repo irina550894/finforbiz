@@ -258,9 +258,12 @@ async function hydrateContentFromJson() {
 
 function initFaq() {
     document.querySelectorAll(".faq-item button").forEach((button) => {
+        const item = button.closest(".faq-item");
+        button.setAttribute("aria-expanded", item.classList.contains("is-open") ? "true" : "false");
+
         button.addEventListener("click", () => {
-            const item = button.closest(".faq-item");
             item.classList.toggle("is-open");
+            button.setAttribute("aria-expanded", item.classList.contains("is-open") ? "true" : "false");
         });
     });
 }

@@ -1036,11 +1036,16 @@ h3 {
     line-height: 1.35;
 }
 
+.faq-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    gap: 18px;
+    margin: 0 auto;
+}
+
 .faq-list {
     display: grid;
     gap: 12px;
-    width: min(840px, 100%);
-    margin: 0 auto;
 }
 
 .faq-item {
@@ -1049,6 +1054,11 @@ h3 {
 }
 
 .faq-item button {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
     width: 100%;
     padding: 20px 24px;
     border: 0;
@@ -1057,6 +1067,22 @@ h3 {
     text-align: left;
     cursor: pointer;
     font-weight: 900;
+}
+
+.faq-item button::after {
+    content: "";
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    margin-top: 6px;
+    border-top: 2px solid var(--muted);
+    border-right: 2px solid var(--muted);
+    transform: rotate(135deg);
+    transition: transform 0.2s ease;
+}
+
+.faq-item.is-open button::after {
+    transform: rotate(-45deg);
 }
 
 .faq-item p {
@@ -1068,6 +1094,42 @@ h3 {
 
 .faq-item.is-open p {
     display: block;
+}
+
+.faq-security {
+    align-self: start;
+    padding: 28px;
+    border-radius: 28px;
+    background: var(--soft);
+}
+
+.faq-security h3 {
+    margin-bottom: 28px;
+    font-size: clamp(26px, 3vw, 34px);
+    line-height: 1.08;
+}
+
+.faq-security__item {
+    display: grid;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.faq-security__icon {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--purple);
+    border-radius: 8px;
+}
+
+.faq-security__item strong {
+    color: var(--ink);
+    font-size: 18px;
+}
+
+.faq-security__item p {
+    margin: 0;
+    color: var(--muted);
 }
 
 .contacts {
@@ -1277,7 +1339,8 @@ h3 {
 @media (max-width: 1080px) {
     .hero,
     .contacts,
-    .profile-card {
+    .profile-card,
+    .faq-layout {
         grid-template-columns: 1fr;
     }
 
@@ -1418,6 +1481,7 @@ h3 {
     .case-grid,
     .workflow-grid,
     .carousel-layout,
+    .faq-layout,
     .contact-form,
     .hero-stats {
         grid-template-columns: 1fr;
@@ -1491,6 +1555,23 @@ h3 {
     .section-heading,
     .section-heading.compact {
         margin-bottom: 18px;
+    }
+
+    .faq-item button {
+        padding: 18px 20px;
+    }
+
+    .faq-item p {
+        padding: 0 20px 20px;
+    }
+
+    .faq-security {
+        padding: 22px;
+        border-radius: 22px;
+    }
+
+    .faq-security h3 {
+        margin-bottom: 22px;
     }
 
     .video-frame {
