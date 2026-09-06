@@ -307,6 +307,7 @@ function initCarousels() {
         nextButton?.addEventListener("click", () => setSlide(currentIndex + 1));
 
         viewport.addEventListener("pointerdown", (event) => {
+            if (event.target.closest("button, a, input, select, textarea")) return;
             isPointerDown = true;
             startX = event.clientX;
             viewport.setPointerCapture?.(event.pointerId);
@@ -492,9 +493,17 @@ function initCaseModal() {
         document.body.classList.remove("modal-open");
     }
 
+    document.querySelectorAll("[data-case-index]").forEach((button) => {
+        button.addEventListener("click", (event) => {
+            event.stopPropagation();
+            openCase(Number(button.dataset.caseIndex));
+        });
+    });
+
     casesTrack.addEventListener("click", (event) => {
         const button = event.target.closest("[data-case-index]");
         if (!button) return;
+        event.stopPropagation();
         openCase(Number(button.dataset.caseIndex));
     });
 
