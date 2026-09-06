@@ -112,6 +112,7 @@ const defaultPortfolioGalleries = {
 };
 
 let portfolioGalleries = { ...defaultPortfolioGalleries };
+let caseStudies = [];
 
 function escapeHtml(value) {
     return String(value ?? "")
@@ -158,12 +159,13 @@ function renderServices(services) {
 function renderCases(cases) {
     const track = document.querySelector("[data-cases-track]");
     if (!track || !Array.isArray(cases) || cases.length === 0) return;
+    caseStudies = cases;
 
-    track.innerHTML = cases.map((item) => {
+    track.innerHTML = cases.map((item, index) => {
         const hasDetailedLayout = item.action || item.resultValue || item.ownerBenefit;
         const body = hasDetailedLayout
             ? `
-                ${item.action ? `<p class="case-card__detail"><strong>Что сделала:</strong> ${escapeHtml(item.action)}</p>` : ""}
+                ${item.summary ? `<p class="case-card__summary">${escapeHtml(item.summary)}</p>` : ""}
                 ${item.resultValue ? `
                     <div class="case-card__result">
                         <strong>${escapeHtml(item.resultValue)}</strong>
@@ -171,6 +173,7 @@ function renderCases(cases) {
                     </div>
                 ` : ""}
                 ${item.ownerBenefit ? `<p class="case-card__detail"><strong>Для собственника:</strong> ${escapeHtml(item.ownerBenefit)}</p>` : ""}
+                <button class="case-card__more" type="button" data-case-index="${index}">Подробнее</button>
             `
             : `<p>${escapeHtml(item.description)}</p>`;
 
@@ -447,6 +450,65 @@ function initPortfolioModal() {
     });
 }
 
+function initCaseModal() {
+    const caseModal = document.querySelector("#case-modal");
+    const caseModalTitle = document.querySelector("#case-modal-title");
+    const caseModalCategory = document.querySelector("#case-modal-category");
+    const caseModalBody = document.querySelector("#case-modal-body");
+    const casesTrack = document.querySelector("[data-cases-track]");
+
+    if (!caseModal || !caseModalTitle || !caseModalCategory || !caseModalBody || !casesTrack) return;
+
+    const renderSection = (title, text, modifier = "") => text ? `
+        <section class="case-modal__section ${modifier}">
+            <h3>${escapeHtml(title)}</h3>
+            <p>${escapeHtml(text)}</p>
+        </section>
+    ` : "";
+
+    function openCase(index) {
+        const item = caseStudies[index];
+        if (!item) return;
+
+        caseModalTitle.textContent = item.title;
+        caseModalCategory.textContent = item.category;
+        caseModalBody.innerHTML = `
+            ${renderSection("Точка А", item.summary)}
+            ${renderSection("Задача", item.task)}
+            ${renderSection("Что сделала", item.action)}
+            ${renderSection("Главный эффект", item.effect, "case-modal__section--effect")}
+            ${renderSection("Результат", item.result, "case-modal__section--result")}
+            ${renderSection(item.ownerTitle || "Что получил собственник", item.ownerBenefit)}
+            ${renderSection("Инсайт", item.insight, "case-modal__section--insight")}
+        `;
+        caseModal.classList.add("is-open");
+        caseModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+    }
+
+    function closeCase() {
+        caseModal.classList.remove("is-open");
+        caseModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+    }
+
+    casesTrack.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-case-index]");
+        if (!button) return;
+        openCase(Number(button.dataset.caseIndex));
+    });
+
+    document.querySelectorAll("[data-case-close]").forEach((button) => {
+        button.addEventListener("click", closeCase);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && caseModal.classList.contains("is-open")) {
+            closeCase();
+        }
+    });
+}
+
 function initContactForm() {
     const contactForm = document.querySelector("#contact-form");
     const formNote = document.querySelector("#form-note");
@@ -508,5 +570,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     initFaq();
     initCarousels();
     initPortfolioModal();
+    initCaseModal();
     initContactForm();
 });
